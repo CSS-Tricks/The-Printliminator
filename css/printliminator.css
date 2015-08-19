@@ -1,39 +1,44 @@
 @media print, screen {
-    
-    body { 
-    margin:0;
-    padding:0;
-    line-height: 1.4;
-    word-spacing:1.1pt;
-    letter-spacing:0.2pt; font-family: Garamond,"Times New Roman", serif; color: #000; background: none; font-size: 12pt; }
-        
-    /*Headings */
-    h1,h2,h3,h4,h5,h6 { font-family: Helvetica, Arial, sans-serif; }
-    h1{font-size:19pt;}
-    h2{font-size:17pt;}
-    h3{font-size:15pt;}
-    h4,h5,h6{font-size:12pt;}
-    
-    code { font: 10pt Courier, monospace; } 
-    blockquote { margin: 1.3em; padding: 1em;  font-size: 10pt; }
-    hr { background-color: #ccc; }
-    
-    /* Images */
-    img { float: left; margin: 1em 1.5em 1.5em 0; }
-    a img { border: none; }
-    
-    /* Table */
-    table { margin: 1px; text-align:left; border-collapse: collapse; }
-    th { border: 1px solid #333;  font-weight: bold; }
-    td { border: 1px solid #333; }
-    th,td { padding: 4px 10px; }
-    tfoot { font-style: italic; }
-    caption { background: #fff; margin-bottom: 20px; text-align:left; }
-    thead {display: table-header-group;}
-    tr {page-break-inside: avoid;} 
+
+	body {
+		margin:0;
+		padding:0;
+		line-height: 1.4;
+		word-spacing: 1.1pt;
+		letter-spacing: 0.2pt;
+		font-family: Garamond, "Times New Roman", serif;
+		color: #000;
+		background: none;
+		font-size: 12pt;
+	}
+
+	/*Headings */
+	h1,h2,h3,h4,h5,h6 { font-family: Helvetica, Arial, sans-serif; }
+	h1{font-size:19pt;}
+	h2{font-size:17pt;}
+	h3{font-size:15pt;}
+	h4,h5,h6{font-size:12pt;}
+
+	code { font: 10pt Courier, monospace; }
+	blockquote { margin: 1.3em; padding: 1em;  font-size: 10pt; }
+	hr { background-color: #ccc; }
+
+	/* Images */
+	img { float: left; margin: 1em 1.5em 1.5em 0; }
+	a img { border: none; }
+
+	/* Table */
+	table { margin: 1px; text-align:left; border-collapse: collapse; }
+	th { border: 1px solid #333;  font-weight: bold; }
+	td { border: 1px solid #333; }
+	th,td { padding: 4px 10px; }
+	tfoot { font-style: italic; }
+	caption { background: #fff; margin-bottom: 20px; text-align:left; }
+	thead {display: table-header-group;}
+	tr {page-break-inside: avoid;}
 
 }
 
 @media screen {
-    body { padding: 20px; }
+	body { padding: 20px; }
 }
