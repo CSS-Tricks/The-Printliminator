@@ -12,6 +12,9 @@ body {
     font: 20px/1.6 Georgia, serif;
     overflow-x: hidden;
 }
+#frame {
+    margin: 3px 0 0 1px;
+}
 #page-wrap {
     width: 570px;
     margin: 25px auto;
@@ -29,8 +32,16 @@ p {
     background: black;
     color: white;
     padding: 8px 20px;
+    margin-top: 4px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
+}
+iframe, .drag-arrow {
+    font-size: 14px;
+    vertical-align: middle;
+}
+.drag-arrow strong {
+    font-size: 20px;
 }
 h2 {
     font: bold 32px Helvetica, sans-serif;
