@@ -1,1 +1,0 @@
-##Bookmarklet for cleaning up pages to make them print better

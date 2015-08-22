@@ -3,10 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>The Printliminator</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="demo/css/style.css">
 </head>
 
 <body>
+
+<!--
+This file is dynamically generated
+█████▄ ▄████▄   █████▄ ▄████▄ ██████   ███████▄ ▄████▄ █████▄ ██ ██████ ██  ██
+██  ██ ██  ██   ██  ██ ██  ██   ██     ██ ██ ██ ██  ██ ██  ██ ██ ██     ██  ██
+██  ██ ██  ██   ██  ██ ██  ██   ██     ██ ██ ██ ██  ██ ██  ██ ██ ██▀▀   ▀▀▀▀██
+█████▀ ▀████▀   ██  ██ ▀████▀   ██     ██ ██ ██ ▀████▀ █████▀ ██ ██     █████▀
+To make changes, modify the "src/index.html"
+-->
+
 	<div id="demo-top-bar">
 		<div id="demo-bar-inside">
 			<h2 id="demo-bar-badge">
@@ -18,7 +28,7 @@
 
 	<div id="page-wrap">
 
-		<h1>The Printliminator</h1>
+		<h1>The Printliminator<span id="dev-mode"></span></h1>
 
 		<p>The Printliminator is a bookmarklet with some simple tools you can use
 		to makes websites print better. One click to activate, and then click to remove
@@ -26,8 +36,9 @@
 		Here is the bookmarklet:</p>
 
 		<p>
-			<a href="javascript:/*PRINTLIMINATOR*/(function(){function%20loadScript(a,b){var%20c=document.createElement('script');c.type='text/javascript';c.src=a;var%20d=document.getElementsByTagName('head')[0],done=false;c.onload=c.onreadystatechange=function(){if(!done&amp;&amp;(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){done=true;b()}};d.appendChild(c)}loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js',function(){var%20jq=jQuery.noConflict();loadScript('//css-tricks.github.io/The-Printliminator/js/printliminator.js',function(){csstricksPrintliminator(jq)})})})()" class="bookmarklet">Printliminator</a>
-			<span style="font-size: 14px;">&lt; drag to your bookmarks bar</span>
+			<a href="javascript:/*PRINTLIMINATOR*/!function(){function%20a(a,b){var%20c=document.createElement('script'),d=document.getElementsByTagName('head')[0],e=!1;c.type='text/javascript',c.src=a,c.onload=c.onreadystatechange=function(){e||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(e=!0,b())},d.appendChild(c)}a('//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js',function(){var%20b=jQuery.noConflict();a('//css-tricks.github.io/The-Printliminator/printliminator.min.js',function(){csstricksPrintliminator(b)})})}();" id="bookmarklet" class="bookmarklet">Printliminator</a>
+			<span class="drag-arrow"><strong>&larr;</strong> drag to your bookmarks bar</span>
+		</p>
 
 		<h2>Video Demo</h2>
 
@@ -42,6 +53,17 @@
 		Print stylesheet based on <a href="http://code.google.com/p/hartija/">Hartija</a>.</p>
 
 		</div>
+
+		<script>
+		// file loaded locally, switch to local version for development
+		( function() {
+			if ( window.location.origin === 'file://' ) {
+				var link = document.getElementById( 'bookmarklet' );
+				link.href = "javascript:/*PRINTLIMINATOR*/!function(){function%20a(a,b){var%20c=document.createElement('script'),d=document.getElementsByTagName('head')[0],e=!1;c.type='text/javascript',c.src=a,c.onload=c.onreadystatechange=function(){e||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(e=!0,b())},d.appendChild(c)}a('http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js',function(){var%20b=jQuery.noConflict();a('src/printliminator.js',function(){csstricksPrintliminator(b)})})}();";
+				document.getElementById('dev-mode').textContent = '(Dev Mode)';
+			}
+		})();
+		</script>
 
 	</body>
 

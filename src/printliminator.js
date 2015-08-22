@@ -5,18 +5,20 @@ function csstricksPrintliminator( jQ ) {
 	history = [],
 	flags = {},
 	dont = false,
+	// if local, load local sprite image
+	sprite = ( window.location.origin === 'file://' ? '' : '//css-tricks.github.io/The-Printliminator/' ) +
+		'printliminator.png',
 	// programmically added stylesheets
-	root = '', // '//css-tricks.com/examples/ThePrintliminator/';
 	styles = '' +
 		'._print_controls { position: fixed; top: 25px; right: 25px; width: 162px; height: 182px; z-index: 10000;' +
 			'-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;' +
-			'background: url(' + root + 'images/printliminator2.png) no-repeat; }' +
+			'background: url(' + sprite + ') no-repeat; }' +
 		'._print_controls_close { position: absolute; top: -20px; right: -20px; width: 33px; height: 33px;' +
-			'background: url(' + root + 'images/printliminator2.png) -222px -3px no-repeat; }' +
+			'background: url(' + sprite + ') -222px -3px no-repeat; }' +
 		'._print_controls_close:hover { background-position: -222px -39px; }' +
 		'._print_controls_remove_graphics, ._print_controls_print, ._print_controls_undo, ._print_controls_stylize {' +
 			'position: absolute; height: 74px; width: 74px;' +
-			'background: url(' + root + 'images/printliminator2.png) no-repeat; }' +
+			'background: url(' + sprite + ') no-repeat; }' +
 		'._print_controls_remove_graphics { top: 6px; left: 6px; background-position: 0px -182px; }' +
 		'._print_controls_remove_graphics:hover { background-position: 0 -256px; }' +
 		'._print_controls_remove_graphics.active { background-position: 0 -330px; }' +
