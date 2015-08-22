@@ -96,13 +96,29 @@ function csstricksPrintliminator( jQ ) {
 	// Remove Graphics
 	$( '<div class="_print_controls_remove_graphics">' )
 		.click( function() {
-			var done = $('img,iframe,object,embed,input[type=image],ins').addClass( '_print_removed' ),
-				bg = $('body *:not(._print_controls, ._print_controls *)').css('background'),
-				item = $('body *:not(._print_controls, ._print_controls *)').css('background', 'none');
-			done.addClass("_print_removed");
-			history.push(function() {
-				done.show();
-				item.css('background', bg);
+			var indx, $el, bkgd,
+				bkgds = [],
+				$done = $( 'img, iframe, object, embed, input[type=image], ins' ),
+				$item = $( 'body *:not(._print_controls, ._print_controls *)' ),
+				len = $item.length;
+			for ( indx = 0; indx < len; indx++ ) {
+				$el = $item.eq( indx );
+				bkgd = $el.css( 'background-image' );
+				if ( bkgd !== 'none' ) {
+					bkgds.push( [ $el, bkgd ] );
+					$el.css( 'background-image', 'none' );
+				}
+			}
+			$done.addClass( '_print_removed' );
+
+			history.push( function() {
+				$done.removeClass( '_print_removed' );
+				var $el,
+					len = bkgds.length;
+				for ( indx = 0; indx < len; indx++ ) {
+					$el = bkgds[ indx ][ 0 ];
+					$el.css( 'background-image', bkgds[ indx ][ 1 ] );
+				}
 			});
 		})
 		.appendTo( $controls );
