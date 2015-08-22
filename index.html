@@ -26,9 +26,8 @@
 		Here is the bookmarklet:</p>
 
 		<p>
-			<a href="javascript:(function(){function%20loadScript(a,b){var%20c=document.createElement('script');c.type='text/javascript';c.src=a;var%20d=document.getElementsByTagName('head')[0],done=false;c.onload=c.onreadystatechange=function(){if(!done&amp;&amp;(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){done=true;b()}};d.appendChild(c)}loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js',function(){loadScript('http://css-tricks.github.io/The-Printliminator/js/printliminator.js',function(){printliminator()})})})()" class="bookmarklet">Printliminator</a>
+			<a href="javascript:/*PRINTLIMINATOR*/(function(){function%20loadScript(a,b){var%20c=document.createElement('script');c.type='text/javascript';c.src=a;var%20d=document.getElementsByTagName('head')[0],done=false;c.onload=c.onreadystatechange=function(){if(!done&amp;&amp;(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){done=true;b()}};d.appendChild(c)}loadScript('//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js',function(){var%20jq=jQuery.noConflict();loadScript('//css-tricks.github.io/The-Printliminator/js/printliminator.js',function(){csstricksPrintliminator(jq)})})})()" class="bookmarklet">Printliminator</a>
 			<span style="font-size: 14px;">&lt; drag to your bookmarks bar</span>
-		</p>
 
 		<h2>Video Demo</h2>
 
