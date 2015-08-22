@@ -3,6 +3,7 @@ function csstricksPrintliminator( jQ ) {
 	// remove conflicts with other javascript libraries
 	var $ = jQ.noConflict(),
 	history = [],
+	flags = {},
 	dont = false,
 	// programmically added stylesheets
 	root = '', // '//css-tricks.com/examples/ThePrintliminator/';
@@ -96,30 +97,34 @@ function csstricksPrintliminator( jQ ) {
 	// Remove Graphics
 	$( '<div class="_print_controls_remove_graphics">' )
 		.click( function() {
-			var indx, $el, bkgd,
-				bkgds = [],
-				$done = $( 'img, iframe, object, embed, input[type=image], ins' ),
-				$item = $( 'body *:not(._print_controls, ._print_controls *)' ),
-				len = $item.length;
-			for ( indx = 0; indx < len; indx++ ) {
-				$el = $item.eq( indx );
-				bkgd = $el.css( 'background-image' );
-				if ( bkgd !== 'none' ) {
-					bkgds.push( [ $el, bkgd ] );
-					$el.css( 'background-image', 'none' );
-				}
-			}
-			$done.addClass( '_print_removed' );
-
-			history.push( function() {
-				$done.removeClass( '_print_removed' );
-				var $el,
-					len = bkgds.length;
+			if ( !flags.removeGraphics ) {
+				var indx, $el, bkgd,
+					bkgds = [],
+					$done = $( 'img, iframe, object, embed, input[type=image], ins' ),
+					$item = $( 'body *:not(._print_controls, ._print_controls *)' ),
+					len = $item.length;
 				for ( indx = 0; indx < len; indx++ ) {
-					$el = bkgds[ indx ][ 0 ];
-					$el.css( 'background-image', bkgds[ indx ][ 1 ] );
+					$el = $item.eq( indx );
+					bkgd = $el.css( 'background-image' );
+					if ( bkgd !== 'none' ) {
+						bkgds.push( [ $el, bkgd ] );
+						$el.css( 'background-image', 'none' );
+					}
 				}
-			});
+				$done.addClass( '_print_removed' );
+				flags.removeGraphics = true;
+
+				history.push( function() {
+					flags.removeGraphics = false;
+					$done.removeClass( '_print_removed' );
+					var $el,
+						len = bkgds.length;
+					for ( indx = 0; indx < len; indx++ ) {
+						$el = bkgds[ indx ][ 0 ];
+						$el.css( 'background-image', bkgds[ indx ][ 1 ] );
+					}
+				});
+			}
 		})
 		.appendTo( $controls );
 
@@ -133,28 +138,32 @@ function csstricksPrintliminator( jQ ) {
 	// Print
 	$( '<div class="_print_controls_print">' )
 		.click( function() {
-			var links = $( 'link[rel="stylesheet"], style:not(#_print_controls_styles)' ).remove(),
-			// cache and remove inline styles
-			inline = $( 'body *:not(._print_controls, ._print_controls > *, ._print_removed)' ).map( function() {
-				var $this = $( this ),
-					style = $this.attr( 'style' );
-				$this.attr( 'style', '' );
-				return {
-					el: this,
-					style: style
-				};
-			}),
-			print = $( '<style id="_print_controls_printstylesheet">' )
-				.text( printstylesheet )
-				.appendTo( 'head' );
+			if ( !flags.stylize ) {
+				var links = $( 'link[rel="stylesheet"], style:not(#_print_controls_styles)' ).remove(),
+				// cache and remove inline styles
+				inline = $( 'body *:not(._print_controls, ._print_controls > *, ._print_removed)' ).map( function() {
+					var $this = $( this ),
+						style = $this.attr( 'style' );
+					$this.attr( 'style', '' );
+					return {
+						el: this,
+						style: style
+					};
+				}),
+				print = $( '<style id="_print_controls_printstylesheet">' )
+					.text( printstylesheet )
+					.appendTo( 'head' );
+				flags.stylize = true;
 
-			history.push( function() {
-				print.remove();
-				links.appendTo( 'head' );
-				inline.each( function() {
-					$( this.el ).attr( 'style', this.style );
+				history.push( function() {
+					flags.stylize = false;
+					print.remove();
+					links.appendTo( 'head' );
+					inline.each( function() {
+						$( this.el ).attr( 'style', this.style );
+					});
 				});
-			});
+			}
 		})
 		.appendTo( $controls );
 
