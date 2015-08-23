@@ -4,7 +4,6 @@ function csstricksPrintliminator( jQ ) {
 	var $ = jQ.noConflict(),
 	history = [],
 	flags = {},
-	dont = false,
 	// if local, load local sprite image
 	sprite = ( window.location.origin === 'file://' ? '' : '//css-tricks.github.io/The-Printliminator/' ) +
 		'printliminator.png',
@@ -64,28 +63,26 @@ function csstricksPrintliminator( jQ ) {
 
 	$( 'body *:not(._print_controls, ._print_controls *)' )
 		.live( 'click', function( e ) {
-			if ( !dont ) {
-				e.preventDefault();
-				var $done,
-					$this = $( this );
-				if ( e.altKey ) {
-					$done = $( 'body *' )
-						.not( '._print_controls, ._print_controls *, style' )
-						.not( $this.parents().andSelf() )
-						.not( $this.find( '*' ) )
-						.addClass( '_print_removed' );
-				} else {
-					$done = $this;
-				}
-				$done.addClass( '_print_removed' );
-				history.push( $done );
+			e.preventDefault();
+			var $done,
+				$this = $( this );
+			if ( e.altKey ) {
+				$done = $( 'body *' )
+					.not( '._print_controls, ._print_controls *, style' )
+					.not( $this.parents().andSelf() )
+					.not( $this.find( '*' ) )
+					.addClass( '_print_removed' );
+			} else {
+				$done = $this;
 			}
+			$done.addClass( '_print_removed' );
+			history.push( $done );
 		})
 		.live( 'mouseover', function() {
-			if ( !dont ) { $(this).addClass( '_printliminator_highlight' ); }
+			$(this).addClass( '_printliminator_highlight' );
 		})
 		.live( 'mouseout', function() {
-			if ( !dont ) { $(this).removeClass( '_printliminator_highlight' ); }
+			$(this).removeClass( '_printliminator_highlight' );
 		});
 
 	var $controls = $( '<div class="_print_controls">' )
