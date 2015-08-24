@@ -15,7 +15,7 @@ print styling.
   * <kbd>Esc</kbd> to cancel.
 * [ ] Make Printliminator window draggable.
 * [ ] Add documentation to the wiki pages.
-* [ ] Remove jQuery dependency (maybe?)
+* [ ] Remove jQuery dependency.
 
 ### Recent Changes
 

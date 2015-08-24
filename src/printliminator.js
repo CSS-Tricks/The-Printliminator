@@ -169,7 +169,7 @@ function csstricksPrintliminator( jQ ) {
 	// Close
 	$( '<div class="_print_controls_close">' )
 		.click( function() {
-			$( '._print_controls, #_print_controls_styles' ).remove();
+			$( '._print_controls' ).remove();
 		})
 		.appendTo( $controls );
 
