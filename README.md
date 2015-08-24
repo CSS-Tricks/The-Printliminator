@@ -2,7 +2,7 @@ The Printliminator is a bookmarklet with some simple tools you can use to makes 
 One click to activate, and then click to remove elements from the page, remove graphics, and apply better
 print styling.
 
-![Screenshot](//css-tricks.github.io/The-Printliminator/demo/images/screenshot.png)
+![screenshot](https://cloud.githubusercontent.com/assets/136959/9445926/649cb622-4a54-11e5-9971-0782ae009a30.png)
 
 [Get the Bookmarklet here](//css-tricks.github.io/The-Printliminator/)
 
