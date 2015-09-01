@@ -2,22 +2,33 @@ The Printliminator is a bookmarklet with some simple tools you can use to makes 
 One click to activate, and then click to remove elements from the page, remove graphics, and apply better
 print styling.
 
-![screenshot](https://cloud.githubusercontent.com/assets/136959/9445926/649cb622-4a54-11e5-9971-0782ae009a30.png)
+![screenshot](//cloud.githubusercontent.com/assets/136959/9610695/cb3e4a4c-50a0-11e5-96cb-e3e54a9c88d5.png)
 
 [Get the Bookmarklet here](//css-tricks.github.io/The-Printliminator/)
 
 ### To Do
 
-* [ ] Add keyboard commands to alter the targeted element. For example:
+* [x] Add keyboard commands to alter the targeted element. For example:
   * <kbd>pageUp</kbd> to select parent of hovered element
   * <kbd>pageDown</kbd> to select child of hovered element (not sure what to do if the mouse moves though)
   * <kbd>Enter</kbd> to hide outlined element.
   * <kbd>Esc</kbd> to cancel.
-* [ ] Make Printliminator window draggable.
+* [x] Make Printliminator window draggable.
+* [x] Remove jQuery dependency.
 * [ ] Add documentation to the wiki pages.
-* [ ] Remove jQuery dependency.
 
 ### Recent Changes
+
+#### Version 3.1.0 (9/1/2015)
+
+* Change design of popup (design by Chris Coyier); see screenshot!
+* Removed jQuery dependency; lots of internal structural changes made.
+* Add keyboard commands. See screenshot for the complete list.
+* Make popup draggable.
+* Note:
+  * This bookmarklet may still not work on some sites that have a strict Content Security directive.
+  * We are working on making this bookmarklet into a browser extension!
+  * It might be best to include both in this repository; use the bookmarklet for older browsers, or in browsers where an extension has not yet been made.
 
 #### Version 3.0.0 (8/24/2015)
 
@@ -40,5 +51,6 @@ print styling.
 ### Credits
 
 * By [Chris Coyier](http://chriscoyier.net) and [Devon Govett](http://devongovett.wordpress.com/).
+* Some contributions by [Rob Garrison](http://wowmotty.blogspot.com/).
 * Icons by [Function](http://wefunction.com/2008/07/function-free-icon-set/).
 * Print stylesheet based on [Hartija](http://code.google.com/p/hartija/).

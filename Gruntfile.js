@@ -15,11 +15,9 @@ module.exports = function( grunt ) {
 			// bookmarklet builder URLs
 			indexHtml : 'index.html',
 			production : {
-				jQuery : '//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js',
 				printliminator : '//css-tricks.github.io/The-Printliminator/printliminator.min.js'
 			},
 			dev : {
-				jQuery : 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js',
 				printliminator : 'src/printliminator.js'
 			},
 
@@ -46,10 +44,8 @@ module.exports = function( grunt ) {
 				globals: {
 					'<%= config.printliminatorFunctionName %>': false
 				},
-				'loopfunc': true,
-				'jquery': true,
-				'browser': true,
-				'undef': true
+				browser: true,
+				undef: true
 			},
 			files: {
 				src: [
@@ -102,8 +98,6 @@ module.exports = function( grunt ) {
 
 			modFile = function( mode ) {
 				var file = content
-					// replace URLs in javascript, depending on mode
-					.replace( /\{jQuery\}/, config[ mode ].jQuery )
 					.replace( /\{printliminator\}/, config[ mode ].printliminator )
 					.replace( /\"/g, "'" )
 					// not using encodeURI because it changes "{}" into "%7B%7D"
