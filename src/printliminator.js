@@ -143,11 +143,11 @@ var pl = {
 			prefix + '{ padding: 20px; }' +
 
 			// printliminator controls
-			'.' + pl.css.wrap + '{ width: 375px' + impt + ' height: ' + pl.keyboardClosed + 'px; position: fixed' + impt +
-				'top: 0; right: 0; z-index: 999999' + impt + ' border: #000 1px solid' + impt + '}' +
+			'.' + pl.css.wrap + '{ width: 450px' + impt + ' height: ' + pl.keyboardClosed + 'px; position: fixed' + impt +
+				'top: 20px; right: 20px; z-index: 999999' + impt + ' box-shadow: 0 0 80px black' + impt + '}' +
 			'.' + pl.css.drag + '{ width: 28px' + impt + 'height: 20px' + impt + 'position: absolute' + impt +
 				' top: 0' + impt + ' left: 0' + impt + 'cursor: move' + impt + '}' +
-			'.' + pl.css.wrap + ' iframe { width: 375px' + impt + ' height: ' + pl.keyboardClosed + 'px; border: 0' + impt +
+			'.' + pl.css.wrap + ' iframe { width: 450px' + impt + ' height: ' + pl.keyboardClosed + 'px; border: 0' + impt +
 				'overflow-x: hidden' + impt + ' margin: 0' + impt + ' padding: 0' + impt + '}' +
 
 			// prevent selection
@@ -178,6 +178,8 @@ var pl = {
 			button = '_print_controls_button',
 			icon = pl.css.icon,
 
+			logo = 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20134.4%208.7%22%3E%0A%3Cg%3E%0A%09%3Cpath%20d%3D%22M3%2C0.7H0.3C0.1%2C0.7%2C0%2C0.6%2C0%2C0.4c0-0.2%2C0.1-0.3%2C0.3-0.3h6c0.2%2C0%2C0.3%2C0.1%2C0.3%2C0.3c0%2C0.2-0.1%2C0.3-0.3%2C0.3H3.6v7.6%0A%09%09c0%2C0.2-0.1%2C0.3-0.3%2C0.3S3%2C8.4%2C3%2C8.3V0.7z%22%2F%3E%0A%09%3Cpath%20d%3D%22M8.4%2C0.4c0-0.2%2C0.1-0.3%2C0.3-0.3S9%2C0.2%2C9%2C0.4V4h5.4V0.4c0-0.2%2C0.1-0.3%2C0.3-0.3c0.2%2C0%2C0.3%2C0.1%2C0.3%2C0.3v7.9%0A%09%09c0%2C0.2-0.1%2C0.3-0.3%2C0.3c-0.2%2C0-0.3-0.1-0.3-0.3V4.6H9v3.7c0%2C0.2-0.1%2C0.3-0.3%2C0.3S8.4%2C8.4%2C8.4%2C8.3V0.4z%22%2F%3E%0A%09%3Cpath%20d%3D%22M17.5%2C8.2V0.5c0-0.2%2C0.1-0.3%2C0.3-0.3h5.4c0.2%2C0%2C0.3%2C0.1%2C0.3%2C0.3c0%2C0.2-0.1%2C0.3-0.3%2C0.3h-5.1V4h4.6C22.9%2C4%2C23%2C4.1%2C23%2C4.3%0A%09%09c0%2C0.2-0.1%2C0.3-0.3%2C0.3h-4.6V8h5.2c0.2%2C0%2C0.3%2C0.1%2C0.3%2C0.3c0%2C0.2-0.1%2C0.3-0.3%2C0.3h-5.5C17.7%2C8.5%2C17.5%2C8.4%2C17.5%2C8.2z%22%2F%3E%0A%09%3Cpath%20d%3D%22M29%2C0.9c0-0.4%2C0.3-0.7%2C0.7-0.7h2.6c2%2C0%2C3.2%2C1.1%2C3.2%2C2.8v0c0%2C1.9-1.5%2C2.9-3.4%2C2.9h-1.7v2c0%2C0.4-0.3%2C0.7-0.7%2C0.7%0A%09%09c-0.4%2C0-0.7-0.3-0.7-0.7V0.9z%20M32.2%2C4.5C33.3%2C4.5%2C34%2C3.9%2C34%2C3v0c0-1-0.7-1.5-1.8-1.5h-1.7v3H32.2z%22%2F%3E%0A%09%3Cpath%20d%3D%22M37%2C0.9c0-0.4%2C0.3-0.7%2C0.7-0.7h3c1.1%2C0%2C1.9%2C0.3%2C2.4%2C0.8c0.4%2C0.5%2C0.7%2C1.1%2C0.7%2C1.8v0c0%2C1.3-0.8%2C2.2-1.9%2C2.5l1.6%2C2%0A%09%09c0.1%2C0.2%2C0.2%2C0.3%2C0.2%2C0.6c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.3%2C0-0.6-0.2-0.7-0.4l-2-2.6h-1.9v2.3c0%2C0.4-0.3%2C0.7-0.7%2C0.7%0A%09%09c-0.4%2C0-0.7-0.3-0.7-0.7V0.9z%20M40.7%2C4.3c1.1%2C0%2C1.7-0.6%2C1.7-1.4v0c0-0.9-0.6-1.4-1.7-1.4h-2.1v2.8H40.7z%22%2F%3E%0A%09%3Cpath%20d%3D%22M45.8%2C0.8c0-0.4%2C0.3-0.7%2C0.7-0.7c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7v7.1c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.4%2C0-0.7-0.3-0.7-0.7V0.8z%22%2F%3E%0A%09%3Cpath%20d%3D%22M49.5%2C0.8c0-0.4%2C0.3-0.7%2C0.7-0.7h0.2c0.4%2C0%2C0.6%2C0.2%2C0.8%2C0.4L55.4%2C6V0.8c0-0.4%2C0.3-0.7%2C0.7-0.7c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7v7.1%0A%09%09c0%2C0.4-0.3%2C0.7-0.7%2C0.7H56c-0.3%2C0-0.6-0.2-0.8-0.4L51%2C2.6v5.3c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.4%2C0-0.7-0.3-0.7-0.7V0.8z%22%2F%3E%0A%09%3Cpath%20d%3D%22M61.1%2C1.5h-2c-0.4%2C0-0.7-0.3-0.7-0.7c0-0.4%2C0.3-0.7%2C0.7-0.7h5.6c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7c0%2C0.4-0.3%2C0.7-0.7%2C0.7h-2.1v6.4%0A%09%09c0%2C0.4-0.3%2C0.7-0.7%2C0.7s-0.7-0.3-0.7-0.7V1.5z%22%2F%3E%0A%09%3Cpath%20d%3D%22M66.8%2C0.8c0-0.4%2C0.3-0.7%2C0.7-0.7c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7v6.4H72c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7c0%2C0.4-0.3%2C0.7-0.7%2C0.7h-4.5%0A%09%09c-0.4%2C0-0.7-0.3-0.7-0.7V0.8z%22%2F%3E%0A%09%3Cpath%20d%3D%22M74.3%2C0.8c0-0.4%2C0.3-0.7%2C0.7-0.7c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7v7.1c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.4%2C0-0.7-0.3-0.7-0.7V0.8z%22%2F%3E%0A%09%3Cpath%20d%3D%22M78%2C0.8c0-0.4%2C0.3-0.7%2C0.7-0.7h0.2c0.3%2C0%2C0.5%2C0.2%2C0.7%2C0.4l2.5%2C4l2.6-4c0.2-0.3%2C0.4-0.4%2C0.7-0.4h0.2c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7%0A%09%09v7c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.4%2C0-0.7-0.3-0.7-0.7v-5l-2.1%2C3.1c-0.2%2C0.2-0.3%2C0.4-0.6%2C0.4c-0.3%2C0-0.5-0.1-0.6-0.4l-2-3.1v5%0A%09%09c0%2C0.4-0.3%2C0.7-0.7%2C0.7S78%2C8.3%2C78%2C7.9V0.8z%22%2F%3E%0A%09%3Cpath%20d%3D%22M88.5%2C0.8c0-0.4%2C0.3-0.7%2C0.7-0.7c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7v7.1c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.4%2C0-0.7-0.3-0.7-0.7V0.8z%22%2F%3E%0A%09%3Cpath%20d%3D%22M92.2%2C0.8c0-0.4%2C0.3-0.7%2C0.7-0.7h0.2c0.4%2C0%2C0.6%2C0.2%2C0.8%2C0.4L98.1%2C6V0.8c0-0.4%2C0.3-0.7%2C0.7-0.7c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7v7.1%0A%09%09c0%2C0.4-0.3%2C0.7-0.7%2C0.7h-0.1c-0.3%2C0-0.6-0.2-0.8-0.4l-4.3-5.6v5.3c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.4%2C0-0.7-0.3-0.7-0.7V0.8z%22%2F%3E%0A%09%3Cpath%20d%3D%22M101.2%2C7.6l3.1-7c0.2-0.4%2C0.5-0.6%2C0.9-0.6h0.1c0.4%2C0%2C0.7%2C0.2%2C0.9%2C0.6l3.1%2C7c0.1%2C0.1%2C0.1%2C0.2%2C0.1%2C0.3c0%2C0.4-0.3%2C0.7-0.7%2C0.7%0A%09%09c-0.3%2C0-0.6-0.2-0.7-0.5l-0.7-1.6h-4.1l-0.7%2C1.6c-0.1%2C0.3-0.4%2C0.5-0.7%2C0.5c-0.4%2C0-0.7-0.3-0.7-0.7C101.1%2C7.8%2C101.2%2C7.7%2C101.2%2C7.6z%0A%09%09%20M106.7%2C5.2l-1.5-3.4l-1.5%2C3.4H106.7z%22%2F%3E%0A%09%3Cpath%20d%3D%22M112.1%2C1.5h-2c-0.4%2C0-0.7-0.3-0.7-0.7c0-0.4%2C0.3-0.7%2C0.7-0.7h5.6c0.4%2C0%2C0.7%2C0.3%2C0.7%2C0.7c0%2C0.4-0.3%2C0.7-0.7%2C0.7h-2.1v6.4%0A%09%09c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.4%2C0-0.7-0.3-0.7-0.7V1.5z%22%2F%3E%0A%09%3Cpath%20d%3D%22M117%2C4.4L117%2C4.4c0-2.4%2C1.8-4.4%2C4.4-4.4c2.6%2C0%2C4.4%2C2%2C4.4%2C4.3v0c0%2C2.4-1.8%2C4.3-4.4%2C4.3C118.8%2C8.7%2C117%2C6.7%2C117%2C4.4z%0A%09%09%20M124.2%2C4.4L124.2%2C4.4c0-1.7-1.2-3-2.9-3s-2.8%2C1.3-2.8%2C3v0c0%2C1.6%2C1.2%2C3%2C2.9%2C3S124.2%2C6%2C124.2%2C4.4z%22%2F%3E%0A%09%3Cpath%20d%3D%22M127.5%2C0.9c0-0.4%2C0.3-0.7%2C0.7-0.7h3c1.1%2C0%2C1.9%2C0.3%2C2.4%2C0.8c0.4%2C0.5%2C0.7%2C1.1%2C0.7%2C1.8v0c0%2C1.3-0.8%2C2.2-1.9%2C2.5l1.6%2C2%0A%09%09c0.1%2C0.2%2C0.2%2C0.3%2C0.2%2C0.6c0%2C0.4-0.3%2C0.7-0.7%2C0.7c-0.3%2C0-0.6-0.2-0.7-0.4l-2-2.6H129v2.3c0%2C0.4-0.3%2C0.7-0.7%2C0.7%0A%09%09c-0.4%2C0-0.7-0.3-0.7-0.7V0.9z%20M131.2%2C4.3c1.1%2C0%2C1.7-0.6%2C1.7-1.4v0c0-0.9-0.6-1.4-1.7-1.4H129v2.8H131.2z%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A',
+
 			sprite = 'data:image/png;base64,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';
 
 		body.appendChild( el );
@@ -193,8 +195,8 @@ var pl = {
 			'<div><span class="' + icon + ' ' + pl.css.drag + '"></span> DRAG</div>' +
 			'</div>' +
 			'<div class="' + controls + '_top">' +
-			'<h1>The <strong>Printliminator</strong></h1>' +
-			'<h3>Click highlighted boxes to delete</h3>' +
+			'<img class="pl_logo" src="' + logo + '" alt="The Printliminator">' +
+			'<h3><span>Just click stuff on page to remove.</span> Alt-click to remove opposite.</h3>' +
 			'</div>' +
 			'<div class="' + controls + '_footer">' +
 			'<h3>Other Useful Superpowers</h3>' +
@@ -203,8 +205,11 @@ var pl = {
 			'<li class="' + button + ' ' + pl.css.stylize + '"><span class="' + icon + ' ' + icon + '_stylize"></span>Add Print<br>Styles</li>' +
 			'<li class="' + button + ' ' + pl.css.noGraphics + '"><span class="' + icon + ' ' + icon + '_nographics"></span>Remove<br>Graphics</li>' +
 			'<li class="' + button + ' ' + pl.css.print + '"><span class="' + icon + ' ' + icon + '_print"></span>Send to<br>print</li>' +
-			'<li class="' + button + ' ' + pl.css.keyboard + '"><span class="' + icon + ' ' + icon + '_keys"></span>Keyboard<br>Commands</li>' +
 			'</ul>' +
+
+			'<div class="' + controls + '_keyboard-area">' +
+			'<p class="keyboard-commands-toggle' + ' ' + pl.css.keyboard + '">View Keyboard Commands</p>' +
+
 			'<table id="' + pl.css.keyboard + '" style="display:none">' +
 			'<thead>' +
 			'<tr><th class="key">Key</th><th>Command</th></tr>' +
@@ -225,19 +230,22 @@ var pl = {
 				'<td>Set box width to 100% &amp; margins to zero (highlight turns blue)</td></tr>' +
 			'<tr><td><kbd title="Print Screen">PrtScn</kbd></td><td>Print Page</td></tr>' +
 			'<tr><td><kbd title="Escape">Esc</kbd></td><td>Disable Printliminator, but save undo history</td></tr>' +
-			'</tbody></table></div>' +
+			'</tbody></table></div></div>' +
 			'<style>' +
 			'html { box-sizing: border-box; height: 100%; } *, *:before, *:after { box-sizing: inherit; }' +
-			'html,body { background: #eee; width: 375px; min-height: ' + pl.keyboardClosed + 'px;' +
-				'font-size: 14px; margin: 0; padding: 0; cursor: default;' +
-				'font-family: Univers, Calibri, "Myriad Pro", Myriad, Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;' +
+			'html,body { background: #eee; min-height: ' + pl.keyboardClosed + 'px;' +
+				'font-size: 14px; margin: 0; padding: 0; cursor: default; overflow: hidden;' +
+				'font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;' +
 				'-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }' +
-			prefix + '_top { background: #fff; }' +
-			'h1, h3 { margin: 0 0 0 10px; font-weight: normal;' +
+			prefix + '_top { background: #fff; padding: 15px; }' +
+			prefix + '_footer { padding: 15px 15px 0 15px; }' +
+			prefix + '_keyboard-area { margin: 0 -15px 0 -15px; padding: 15px; background: #ccc; }' +
+			'.keyboard-commands-toggle { font-size: 12px; margin: 0 0 15px 0; }' +
+			'h1, h3 { margin: 0 0  10px; font-weight: normal;' +
 				'text-transform: uppercase; }' +
-			'h1 { font-size: 32px; }' +
-			'h3 { font-size: 19px; font-weight: bold; }' +
-			prefix + '_top h3 { color: red; }' +
+				'.pl_logo { width: 225px; height: 15px; margin: 0 0 5px 0; }' +
+			'h3 { font-size: 10px; font-weight: bold; }' +
+			prefix + '_top h3 { color: #ccc; margin: 0; }' + prefix + '_top h3 span { color: red; }' +
 			'.' + pl.css.icon + '{ display: inline-block; background: url(' + sprite + ') no-repeat;' +
 				'width: 25px; height: 25px; vertical-align: middle; }' +
 			'.' + pl.css.icon + '.' + pl.css.drag + ' { background-position: 0 0; }' +
@@ -248,22 +256,23 @@ var pl = {
 			'.' + pl.css.icon + '_nographics { background-position: -25px -25px; }' +
 			'.' + pl.css.icon + '_left_click { background-position: -50px -25px; }' +
 			'.' + pl.css.icon + '_stylize { background-position: -75px -25px; width: 35px; }' +
-			prefix + '_header,' + prefix + '_button { background: #000; color: #fff;}' +
-			prefix + '_header,' + prefix + '_header > div { height: 21px; }' +
+			prefix + '_header,' + prefix + '_button { background: #111; color: #fff; font-size: 11px; }' +
+			prefix + '_header,' + prefix + '_header > div { height: 21px; font-size: 11px; }' +
 			prefix + '_header > div,' + prefix + '_button { display: inline-block; }' +
 			prefix + '_right { float: right; margin-right: 6px; }' +
-			prefix + '_footer ul { margin: 2px; text-align: center; padding: 4px;' +
-				'list-style-type: none;}' +
-			prefix + '_button { padding: 4px 8px 4px 4px; line-height: 18px; min-width: 90px; text-align: left;' +
+			prefix + '_footer ul { margin: 0 0 15px 0; padding: 0;' +
+				'list-style-type: none; }' +
+			prefix + '_button { padding: 4px 14px 4px 4px; line-height: 12px; font-size: 10px; text-transform: uppercase; text-align: left;' +
 				'white-space: nowrap; margin: 2px; cursor: pointer; display: inline-block; }' +
 			prefix + '_button:hover,' + prefix + '_button.active { background-color: #333; }' +
-			prefix + '_button span { float: left; margin: 5px 5px 5px 0; text-align: left; }' +
-			prefix + '_keyboard { width: 110px; }' +
+			prefix + '_button span { float: left; margin: 0 10px 0 0; text-align: left; }' +
+			prefix + '_keyboard {  }' +
 			'.key { width: 30%; }' +
 			'table { margin: 0 4px; }' +
+			'th { text-align: left; padding: 0 0 10px 0; }' +
 			'kbd { background: #fff; border: #000 1px solid; border-radius: 3px;' +
 				'padding: 1px 3px; }' +
-			'td { border-top: 1px solid #aaa; }' +
+			'td { border-top: 1px solid #aaa; font-size: 12px; padding: 5px; }' +
 			'</style>';
 
 		pl.addEvent( frame.querySelector( '.' + pl.css.noGraphics ), 'click', pl.removeGraphics );
@@ -592,7 +601,7 @@ var pl = {
 		wrap.style.height = ( makeVisible ? pl.keyboardOpen : pl.keyboardClosed ) + 5 + 'px';
 		// iframe needs to be a tiny bit taller than the body inside
 		iframe.style.height = ( makeVisible ? pl.keyboardOpen : pl.keyboardClosed ) + 5 + 'px';
-		ibody.style.height = ( makeVisible ? pl.keyboardOpen : pl.keyboardClosed ) + 'px';
+		ibody.style.height = ( makeVisible ? pl.keyboardOpen : pl.keyboardClosed ) + 20 + 'px';
 	},
 
 	abort : function() {
