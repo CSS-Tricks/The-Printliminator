@@ -295,21 +295,32 @@ var pl = {
 			var done, sel,
 				hilite = document.querySelector( '.' + pl.css.hilite );
 
-			// show opposite (Alt + click)
-			if ( event[ pl.keys.opposite ] ) {
-				done = pl.getOpposite( hilite );
-				sel = done.length;
-				if ( !sel ) {
-					// nothing left to remove
-					return false;
+
+			// Make 100% width & zero margins (set by css)
+			// Shift + click
+			if ( event[ pl.keys.fullWidth ] ) {
+				if ( !pl.hasClass( hilite, pl.css.fullWidth ) ) {
+					pl.addClass( hilite, pl.css.fullWidth );
+					csstricksPrintliminatorVars.history.push( function() {
+						pl.removeClass( hilite, pl.css.fullWidth );
+					});
 				}
 			} else {
-				// hide clicked element
-				done = [ hilite ];
+				// show opposite (Alt + click)
+				if ( event[ pl.keys.opposite ] ) {
+					done = pl.getOpposite( hilite );
+					sel = done.length;
+					if ( !sel ) {
+						// nothing left to remove
+						return false;
+					}
+				} else {
+					// hide clicked element
+					done = [ hilite ];
+				}
+				pl.hide( done );
+				csstricksPrintliminatorVars.history.push( done );
 			}
-
-			pl.hide( done );
-			csstricksPrintliminatorVars.history.push( done );
 
 			// remove any text selection
 			pl.clearSelection();
