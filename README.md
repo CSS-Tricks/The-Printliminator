@@ -2,22 +2,26 @@ The Printliminator is a bookmarklet with some simple tools you can use to makes 
 One click to activate, and then click to remove elements from the page, remove graphics, and apply better
 print styling.
 
-![screenshot](https://cloud.githubusercontent.com/assets/136959/9610695/cb3e4a4c-50a0-11e5-96cb-e3e54a9c88d5.png)
+![screenshot](https://cloud.githubusercontent.com/assets/136959/9867743/caff5512-5b36-11e5-92e5-2b2e022be437.png)
 
 [Get the Bookmarklet here](//css-tricks.github.io/The-Printliminator/)
 
+### Limitations
+
+* Due to Content Security Policy directives on some sites, the Printliminator script is not able to load on some sites (e.g. GitHub). To get around this problem, a Chrome extension is being developed. Hopefully, Opera, Firefox &amp; Safari extensions/addons will quickly follow.
+
 ### To Do
 
-* [x] Add keyboard commands to alter the targeted element. For example:
-  * <kbd>pageUp</kbd> to select parent of hovered element
-  * <kbd>pageDown</kbd> to select child of hovered element (not sure what to do if the mouse moves though)
-  * <kbd>Enter</kbd> to hide outlined element.
-  * <kbd>Esc</kbd> to cancel.
-* [x] Make Printliminator window draggable.
-* [x] Remove jQuery dependency.
 * [ ] Add documentation to the wiki pages.
 
 ### Recent Changes
+
+#### Version 3.1.1 (9/14/2015)
+
+* Readme: Fix screenshot
+* Design update!
+* A `bookmark.html` was added to the Grunt build. Importing this file into your Bookmarks will allow inclusion of a Bookmarklet icon. Instructions will be added to the wiki pages soon.
+* All images were compressed.
 
 #### Version 3.1.0 (9/1/2015)
 

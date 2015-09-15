@@ -1,11 +1,11 @@
-/* Printliminator v3.1.0 */
+/* Printliminator v3.1.1 */
 /* jshint expr:false */
 /* global csstricksPrintliminatorVars */
 ;( function() {
 'use strict';
 var pl = {
 
-	version : '3.1.0',
+	version : '3.1.1',
 
 	css : {
 		hilite     : '_printliminator_highlight',
