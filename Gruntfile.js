@@ -14,6 +14,7 @@ module.exports = function( grunt ) {
 
 			// bookmarklet builder URLs
 			indexHtml : 'index.html',
+			bookmarkHtml : 'bookmark.html',
 			production : {
 				printliminator : '//css-tricks.github.io/The-Printliminator/printliminator.min.js'
 			},
@@ -95,16 +96,21 @@ module.exports = function( grunt ) {
 		var content = grunt.file.read( config.bookmarkletJs + '.min.js' ),
 			// load index.html template
 			baseHtml = grunt.file.read( config.src + config.indexHtml ),
+			bookmarkHtml = grunt.file.read( config.src + config.bookmarkHtml ),
 
 			modFile = function( mode ) {
-				var file = content
+				var regex = new RegExp('\\{' + mode + '\\}'),
+				file = content
 					.replace( /\{printliminator\}/, config[ mode ].printliminator )
 					.replace( /\"/g, "'" )
 					// not using encodeURI because it changes "{}" into "%7B%7D"
 					// and just makes the bookmarklet bigger & harder to read
 					.replace( /\x20/g, '%20' );
 				// add javascript to HTML
-				baseHtml = baseHtml.replace( new RegExp('\\{' + mode + '\\}'), file );
+				baseHtml = baseHtml.replace( regex, file );
+				if ( mode === 'production' ) {
+					bookmarkHtml = bookmarkHtml.replace( regex, file );
+				}
 			};
 
 		// update production & dev bookmarklet href
@@ -117,6 +123,7 @@ module.exports = function( grunt ) {
 
 		// write modified index.html
 		grunt.file.write( config.indexHtml, baseHtml );
+		grunt.file.write( config.bookmarkHtml, bookmarkHtml );
 	});
 
 	grunt.registerTask( 'default', 'Default build', function() {
