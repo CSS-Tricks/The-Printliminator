@@ -25,6 +25,7 @@ var pl = {
 		close      : '_print_controls_close',
 		undo       : '_print_controls_undo',
 		drag       : '_print_controls_icon_drag',
+		dragActive : '_print_controls_drag_active',
 		keyboard   : '_print_controls_keyboard'
 	},
 
@@ -147,6 +148,8 @@ var pl = {
 				'top: 20px; right: 20px; z-index: 999999' + impt + ' box-shadow: 0 0 80px black' + impt + '}' +
 			'.' + pl.css.drag + '{ width: 28px' + impt + 'height: 20px' + impt + 'position: absolute' + impt +
 				' top: 0' + impt + ' left: 0' + impt + 'cursor: move' + impt + '}' +
+			'.' + pl.css.drag + '.' + pl.css.dragActive + '{ width: 120px' + impt + 'height:100px' + impt +
+				'top:-40px' + impt + 'left:-40px' + impt + '}' +
 			'.' + pl.css.wrap + ' iframe { width: 450px' + impt + ' height: ' + pl.keyboardClosed + 'px; border: 0' + impt +
 				'overflow-x: hidden' + impt + ' margin: 0' + impt + ' padding: 0' + impt + '}' +
 
@@ -442,6 +445,7 @@ var pl = {
 	// drag code adapted from http://jsfiddle.net/tovic/Xcb8d/light/
 	dragInit : function() {
 		var drag = pl.drag;
+		pl.addClass( document.querySelector( '.' + pl.css.drag ), pl.css.dragActive );
 		drag.el = document.querySelector( '.' + pl.css.wrap );
 		drag.elm[0] = drag.pos[0] - drag.el.offsetLeft;
 		drag.elm[1] = drag.pos[1] - drag.el.offsetTop;
@@ -462,6 +466,7 @@ var pl = {
 
 	docMouseUp : function() {
 		pl.drag.el = null;
+		pl.removeClass( document.querySelector( '.' + pl.css.drag ), pl.css.dragActive );
 		pl.toggleSelection();
 	},
 
