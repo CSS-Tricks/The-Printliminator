@@ -240,10 +240,10 @@ var pl = {
 			prefix + '_top { background: #fff; padding: 15px; }' +
 			prefix + '_footer { padding: 15px 15px 0 15px; }' +
 			prefix + '_keyboard-area { margin: 0 -15px 0 -15px; padding: 15px; background: #ccc; }' +
-			'.keyboard-commands-toggle { font-size: 12px; margin: 0 0 15px 0; }' +
+			'.keyboard-commands-toggle { font-size: 12px; margin: 0 0 15px 0; cursor: pointer; }' +
 			'h1, h3 { margin: 0 0  10px; font-weight: normal;' +
 				'text-transform: uppercase; }' +
-				'.pl_logo { width: 225px; height: 15px; margin: 0 0 5px 0; }' +
+			'.pl_logo { width: 225px; height: 15px; margin: 0 0 5px 0; }' +
 			'h3 { font-size: 10px; font-weight: bold; }' +
 			prefix + '_top h3 { color: #ccc; margin: 0; }' + prefix + '_top h3 span { color: red; }' +
 			'.' + pl.css.icon + '{ display: inline-block; background: url(' + sprite + ') no-repeat;' +
@@ -262,11 +262,10 @@ var pl = {
 			prefix + '_right { float: right; margin-right: 6px; }' +
 			prefix + '_footer ul { margin: 0 0 15px 0; padding: 0;' +
 				'list-style-type: none; }' +
-			prefix + '_button { padding: 4px 14px 4px 4px; line-height: 12px; font-size: 10px; text-transform: uppercase; text-align: left;' +
-				'white-space: nowrap; margin: 2px; cursor: pointer; display: inline-block; }' +
-			prefix + '_button:hover,' + prefix + '_button.active { background-color: #333; }' +
+			prefix + '_button { padding: 4px 14px 4px 4px; line-height: 12px; font-size: 10px; text-transform: uppercase;' +
+				'text-align: left; white-space: nowrap; margin: 2px; cursor: pointer; display: inline-block; }' +
+			prefix + '_button:hover { background-color: #333; }' +
 			prefix + '_button span { float: left; margin: 0 10px 0 0; text-align: left; }' +
-			prefix + '_keyboard {  }' +
 			'.key { width: 30%; }' +
 			'table { margin: 0 4px; }' +
 			'th { text-align: left; padding: 0 0 10px 0; }' +
@@ -596,7 +595,7 @@ var pl = {
 			button = ibody.querySelector( '.' + pl.css.keyboard ),
 			disply = kb.style.display,
 			makeVisible = disply === 'none';
-		pl[ makeVisible ? 'addClass' : 'removeClass' ]( button, 'active' );
+		button.innerHTML = makeVisible ? 'Hide Keyboard Commands' : 'View Keyboard Commands';
 		kb.style.display = makeVisible ? '' : 'none';
 		wrap.style.height = ( makeVisible ? pl.keyboardOpen : pl.keyboardClosed ) + 5 + 'px';
 		// iframe needs to be a tiny bit taller than the body inside
