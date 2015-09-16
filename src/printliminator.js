@@ -335,6 +335,8 @@ var pl = {
 		if ( !pl.hasClass( event.target, pl.css.controls ) ) {
 			pl.addClass( event.target, pl.css.hilite );
 		}
+		// make sure main window has focus (not the iframe)
+		window.focus();
 	},
 
 	removeHighlight : function() {
