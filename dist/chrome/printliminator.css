@@ -1,0 +1,153 @@
+@media print, screen {
+  body._printliminator_stylized {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+    word-spacing: 1.1pt !important;
+    letter-spacing: 0.2pt !important;
+    font-family: Garamond, "Times New Roman", serif !important;
+    color: #000 !important;
+    background: none !important;
+    font-size: 12pt !important;
+    /*Headings */
+    /* Images */
+    /* Table */
+  }
+  body._printliminator_stylized h1, body._printliminator_stylized h2, body._printliminator_stylized h3, body._printliminator_stylized h4, body._printliminator_stylized h5, body._printliminator_stylized h6 {
+    font-family: Helvetica, Arial, sans-serif !important;
+  }
+  body._printliminator_stylized h1 {
+    font-size: 19pt !important;
+  }
+  body._printliminator_stylized h2 {
+    font-size: 17pt !important;
+  }
+  body._printliminator_stylized h3 {
+    font-size: 15pt !important;
+  }
+  body._printliminator_stylized h4, body._printliminator_stylized h5, body._printliminator_stylized h6 {
+    font-size: 12pt !important;
+  }
+  body._printliminator_stylized code {
+    font: 10pt Courier, monospace !important;
+  }
+  body._printliminator_stylized blockquote {
+    margin: 1.3em !important;
+    padding: 1em !important;
+    font-size: 10pt !important;
+  }
+  body._printliminator_stylized hr {
+    background-color: #ccc !important;
+  }
+  body._printliminator_stylized img {
+    float: left !important;
+    margin: 1em 1.5em 1.5em 0 !important;
+  }
+  body._printliminator_stylized a img {
+    border: none !important;
+  }
+  body._printliminator_stylized table {
+    margin: 1px !important;
+    text-align: left !important;
+    border-collapse: collapse !important;
+  }
+  body._printliminator_stylized th {
+    border: 1px solid #333 !important;
+    font-weight: bold !important;
+  }
+  body._printliminator_stylized td {
+    border: 1px solid #333 !important;
+  }
+  body._printliminator_stylized th,
+  body._printliminator_stylized td {
+    padding: 4px 10px !important;
+  }
+  body._printliminator_stylized tfoot {
+    font-style: italic !important;
+  }
+  body._printliminator_stylized caption {
+    background: #fff !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
+  }
+  body._printliminator_stylized thead {
+    display: table-header-group !important;
+  }
+  body._printliminator_stylized tr {
+    page-break-inside: avoid !important;
+  }
+
+  ._printliminator_hidden {
+    display: none !important;
+  }
+
+  ._printliminator_full_width {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+@media print {
+  ._printliminator_wrap {
+    display: none !important;
+  }
+}
+@media screen {
+  body._printliminator_stylized {
+    padding: 20px !important;
+  }
+
+  ._printliminator_highlight {
+    outline: 3px solid red !important;
+  }
+  ._printliminator_highlight._printliminator_full_width {
+    outline-color: blue !important;
+  }
+  ._printliminator_highlight, ._printliminator_highlight ._printliminator_messages {
+    cursor: default !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+
+  /* ul & li have same class to make it easier to ignore
+   and reset all possible settings
+  */
+  ._printliminator_messages {
+    font: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif !important;
+    font-size: 16px !important;
+    min-width: none !important;
+    max-height: none !important;
+    min-height: none !important;
+    width: auto !important;
+    height: auto !important;
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: baseline !important;
+    display: block !important;
+  }
+  ._printliminator_messages:before, ._printliminator_messages:after {
+    display: none !important;
+  }
+
+  ul._printliminator_messages {
+    background: transparent !important;
+    list-style-type: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 999999 !important;
+    max-width: 400px !important;
+  }
+
+  li._printliminator_messages {
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: #ddd !important;
+    padding: 20px !important;
+    margin: 5px !important;
+    max-width: none !important;
+  }
+}

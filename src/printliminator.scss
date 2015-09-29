@@ -1,0 +1,192 @@
+$stylized   : /* @echo settings.stylized */;
+$hidden     : /* @echo settings.hidden */;
+$fullWidth  : /* @echo settings.fullWidth */;
+$enabled    : /* @echo settings.enabled */;
+$highlight  : /* @echo settings.hilite */;
+$messages   : /* @echo settings.messages */;
+$wrap       : /* @echo settings.wrap */;
+$kbClosed   : /* @echo settings.keyboardClosed */px;
+$drag       : /* @echo settings.drag */;
+$dragActive : /* @echo settings.dragActive */;
+$noSelect   : /* @echo settings.noSelection */;
+
+$printFontSize     : 12pt;
+$outlineStyle      : 3px solid red;
+$outlineFullWidth  : blue;
+
+$messageFont       : "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+$messageFontSize   : 16px;
+$messageBackground : rgba(0, 0, 0, 0.8);
+$messageTextColor  : #ddd;
+
+@media print, screen {
+
+	body.#{$stylized} {
+		margin: 0 !important;
+		padding: 0 !important;
+		line-height: 1.4 !important;
+		word-spacing: 1.1pt !important;
+		letter-spacing: 0.2pt !important;
+		font-family: Garamond, "Times New Roman", serif !important;
+		color: #000 !important;
+		background: none !important;
+		font-size: $printFontSize !important;
+
+		/*Headings */
+		h1, h2, h3, h4, h5, h6 {
+			font-family: Helvetica, Arial, sans-serif !important;
+		}
+		h1 { font-size: $printFontSize + 7 !important; }
+		h2 { font-size: $printFontSize + 5 !important; }
+		h3 { font-size: $printFontSize + 3 !important; }
+		h4, h5, h6 { font-size: $printFontSize !important; }
+
+		code { font: $printFontSize - 2 Courier, monospace !important; }
+		blockquote { margin: 1.3em !important; padding: 1em !important; font-size: $printFontSize - 2 !important; }
+		hr { background-color: #ccc !important; }
+
+		/* Images */
+		img { float: left !important; margin: 1em 1.5em 1.5em 0 !important; }
+		a img { border: none !important; }
+
+		/* Table */
+		table { margin: 1px !important; text-align:left !important; border-collapse: collapse !important; }
+		th { border: 1px solid #333 !important; font-weight: bold !important; }
+		td { border: 1px solid #333 !important; }
+		th,
+		td { padding: 4px 10px !important; }
+		tfoot { font-style: italic !important; }
+		caption { background: #fff !important; margin-bottom: 20px !important; text-align:left !important; }
+		thead { display: table-header-group !important; }
+		tr { page-break-inside: avoid !important; }
+
+	}
+
+	.#{$hidden} { display: none !important; }
+	.#{$fullWidth} {
+		width: 100% !important;
+		min-width: 100% !important;
+		max-width: 100% !important;
+		margin: 0 !important;
+	}
+
+}
+@media print {
+	.#{$wrap} {
+		display: none !important;
+	}
+}
+
+@media screen {
+	body.#{$stylized} {
+		padding: 20px !important;
+	}
+
+	/* @if MODE='EXT' */
+	.#{$highlight} {
+		outline: $outlineStyle !important;
+
+		&.#{$fullWidth} {
+			outline-color: $outlineFullWidth !important;
+		}
+		&, .#{$messages} {
+			cursor: default !important;
+			-webkit-user-select: none !important;
+			-moz-user-select: none !important;
+			-ms-user-select: none !important;
+			user-select: none !important;
+		}
+
+	}
+
+	/* ul & li have same class to make it easier to ignore
+	 and reset all possible settings
+	*/
+	.#{$messages} {
+		font: $messageFont !important;
+		font-size: $messageFontSize !important;
+		min-width: none !important;
+		max-height: none !important;
+		min-height: none !important;
+		width: auto !important;
+		height: auto !important;
+		border: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		vertical-align: baseline !important;
+		display: block !important;
+
+		&:before, &:after {
+			display: none !important;
+		}
+	}
+
+	ul.#{$messages} {
+		background: transparent !important;
+		list-style-type: none !important;
+		position: fixed !important;
+		top: 0 !important;
+		right: 0 !important;
+		z-index: 999999 !important;
+		max-width: 400px !important;
+	}
+	li.#{$messages} {
+		background: $messageBackground !important;
+		color: $messageTextColor !important;
+		padding: 20px !important;
+		margin: 5px !important;
+		max-width: none !important;
+	}
+	/* @endif */
+	/* @if MODE='BOOKMARKLET' */
+	.#{$highlight} {
+		outline: $outlineStyle !important;
+		cursor: default !important;
+
+		&.#{$fullWidth} {
+			outline-color: $outlineFullWidth !important;
+		}
+	}
+
+	.#{$wrap} {
+		width: 450px !important;
+		height: $kbClosed;
+		position: fixed !important;
+		top: 20px;
+		right: 20px;
+		z-index: 999999 !important;
+		box-shadow: 0 0 80px black !important;
+
+		iframe {
+			width: 450px !important;
+			height: $kbClosed;
+			border: 0 !important;
+			overflow-x: hidden !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+	}
+	.#{$drag} {
+		width: 28px !important;
+		height: 20px !important;
+		position: absolute !important;
+		top: 0 !important;
+		left: 0 !important;
+		cursor: move !important;
+
+		&.#{$dragActive} {
+			width: 120px !important;
+			height: 100px !important;
+			top: -40px !important;
+			left: -40px !important;
+		}
+	}
+
+	body.#{$noSelect}, .#{$highlight}, .#{$wrap}, .#{$drag}, .#{$wrap} iframe {
+		-webkit-user-select: none !important;
+		-moz-user-select: none !important;
+		-ms-user-select: none !important;
+		user-select: none !important;
+	}
+	/* @endif */
+}

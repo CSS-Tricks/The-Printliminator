@@ -1,0 +1,177 @@
+$icon           : /* @echo icon */;
+$print          : /* @echo print */;
+$close          : /* @echo close */;
+$undo           : /* @echo undo */;
+$noGraphics     : /* @echo noGraphics */;
+$stylize        : /* @echo stylize */;
+$busy           : /* @echo busy */;
+$leftClick      : /* @echo leftClick */;
+$toggle         : /* @echo toggle */;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+	width: 450px;
+	min-height: 160px;
+	padding: 0;
+	margin: 0;
+	background: #eee;
+	font-size: 14px;
+	font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+	overflow: hidden;
+}
+header {
+	background-color: #fff;
+	padding: 12px 10px 1px 10px;
+
+	h3 {
+		color: #ccc;
+		margin: 0 0 10px;
+	}
+	h3 strong {
+		color: red;
+		margin: 0;
+	}
+}
+
+header, section * {
+	cursor: default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+section {
+	padding: 2px 0;
+}
+.logo {
+	width: 225px;
+	height: 15px;
+	margin: 0;
+}
+
+h3 {
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000;
+	margin: 10px 12px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+li {
+	background: #000;
+	color: #fff;
+	display: inline-block;
+	font-size: 10px;
+	line-height: 12px;
+	text-align: left;
+	text-transform: uppercase;
+	vertical-align: middle;
+	padding: 4px 16px 4px 4px;
+	white-space: nowrap;
+	margin: 2px;
+	cursor: pointer;
+
+	&:hover {
+		background: #444;
+	}
+
+}
+
+.#{$icon} {
+	display: inline-block;
+	background: url(printliminator.png) no-repeat;
+	width: 25px;
+	height: 25px;
+	margin: 0 8px 0 0;
+	vertical-align: middle;
+	float: left;
+}
+
+.#{$print} .#{$icon} { background-position: -25px 0; }
+.#{$undo} .#{$icon} { background-position: 0 -25px; }
+.#{$noGraphics} .#{$icon} { background-position: -25px -25px; }
+.#{$stylize} .#{$icon} { background-position: -75px -25px; width: 35px; }
+.#{$leftClick} { background-position: -50px -25px; float: none; }
+li.#{$busy} .#{$icon} {
+	background-position: -50px 0;
+	-webkit-animation:spin 2s linear infinite;
+	-moz-animation:spin 2s linear infinite;
+	animation:spin 2s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.hidden {
+	display: none;
+}
+.commands-wrap {
+	margin: 8px 0 0 0;
+	padding: 12px;
+	background: #ccc;
+}
+.#{$toggle} {
+	font-size: 12px;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+/* keyboard table */
+table {
+	font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
+	font-size: 12px;
+	text-transform: initial;
+	margin-top: 4px 0 0 0;
+	padding: 0;
+}
+tbody tr:hover td {
+	background: #ddd;
+}
+tbody tr:hover kbd {
+	background: #eee;
+}
+th {
+	text-align: left;
+	padding: 0 0 10px 0;
+}
+th.key {
+	width: 30%;
+}
+td {
+	text-align: left;
+	font-size: 12px;
+	vertical-align: top;
+	border-top: #aaa 1px solid;
+	padding: 5px;
+}
+td svg {
+	vertical-align: middle;
+}
+kbd {
+	background: #fff;
+	border-radius: 3px;
+	border: #333 1px solid;
+	padding: 2px 4px;
+}
+span.lower {
+	text-transform: lowercase;
+}
+span.small {
+	font-size: 0.7em;
+}
+/* center asterisk vertically inside of kbd */
+.asterisk {
+	position: relative;
+	top: 2px;
+}

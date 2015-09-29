@@ -1,4 +1,4 @@
-/* Printliminator v{version}
+/* Printliminator v4.0.1
  * https://github.com/CSS-Tricks/The-Printliminator
  */
 /*jshint expr:false */
@@ -8,50 +8,28 @@
 
 var pl = window.thePrintliminator = {
 
-	version : '{version}',
+	version : '4.0.1',
 
 	// preprocess is used to echo in settings from options.json
 	css : {
-		hilite    : '/* @echo settings.hilite */',
-		fullWidth : '/* @echo settings.fullWidth */',
-		hidden    : '/* @echo settings.hidden */',
+		hilite    : '_printliminator_highlight',
+		fullWidth : '_printliminator_full_width',
+		hidden    : '_printliminator_hidden',
 		// class name added to body when print styles applied (used in printliminator.css)
-		stylized  : '/* @echo settings.stylized */',
-		messages  : '/* @echo settings.messages */',
+		stylized  : '_printliminator_stylized',
+		messages  : '_printliminator_messages',
 
-		// @if MODE='BOOKMARKLET'
-		noSelection: '/* @echo settings.noSelection */', // class on body while dragging
-		// exposed in main document
-		stylesheet : '/* @echo settings.stylesheet */', // stylesheet ID
-		wrap       : '/* @echo settings.wrap */',
-		controls   : '/* @echo settings.controls */',
-		drag       : '/* @echo settings.drag */',
-		dragActive : '/* @echo settings.dragActive */',
-		// inside bookmarklet iframe
-		icon       : '/* @echo settings.icon */',
-		noGraphics : '/* @echo settings.noGraphics */',
-		stylize    : '/* @echo settings.stylize */',
-		print      : '/* @echo settings.print */',
-		close      : '/* @echo settings.close */',
-		undo       : '/* @echo settings.undo */',
-		busy       : '/* @echo settings.busy */',
-		keyboard   : '/* @echo settings.keyboard */',
-		toggle     : '/* @echo settings.toggle */'
-		// @endif
 
-		// @if MODE='EXT'
 		// class name used by popup.js to prevent multiple js injection
-		enabled   : '/* @echo settings.enabled */'
-		// @endif
+		enabled   : '_printliminator_enabled'
 	},
 
-	// @if MODE='EXT'
 	// message options
 	messageOptions : {
-		show      : /* @echo messageShow */,    // show messages (F1 to toggle)
-		limit     : /* @echo messageLimit */,   // messages on screen
-		fade      : /* @echo messageFade */,    // message fadeout (ms)
-		duration  : /* @echo messageDuration */ // message visible (ms)
+		show      : undefined,    // show messages (F1 to toggle)
+		limit     : undefined,   // messages on screen
+		fade      : undefined,    // message fadeout (ms)
+		duration  : undefined // message visible (ms)
 	},
 
 	messages : {
@@ -74,7 +52,6 @@ var pl = window.thePrintliminator = {
 		noGraphicsRestore : 'Restored graphics',
 		undo              : 'Restored'
 	},
-	// @endif
 
 	keys : {
 		parent1   : 33,  // pageUp
@@ -91,9 +68,7 @@ var pl = window.thePrintliminator = {
 		print     : 44,  // PrtScn (keyup only)
 		abort     : 27,  // Esc
 
-		// @if MODE='EXT'
 		messages  : 112, // F1
-		// @endif
 
 		// use event key below
 		opposite  : 'altKey',  // alt + click
@@ -101,22 +76,10 @@ var pl = window.thePrintliminator = {
 	},
 
 	// elements hidden when "remove graphics" is selected
-	noGraphics  : 'img, iframe:not(./* @echo settings.controls */), object, embed, audio, video, input[type=image], svg',
+	noGraphics  : 'img, iframe:not(._printliminator_controls), object, embed, audio, video, input[type=image], svg',
 	// elements to ignore while traversing
 	ignoredElm  : /^(br|meta|style|link|script)$/i,
 
-	// @if MODE='BOOKMARKLET'
-	// iframe height with keyboard open/closed
-	keyboardOpen   : /* @echo settings.keyboardOpen */,
-	keyboardClosed : /* @echo settings.keyboardClosed */,
-
-	// Bookmarklet popup - dragging parameters stored here
-	drag : {
-		el : null,
-		pos : [ 0, 0 ],
-		elm : [ 0, 0 ]
-	},
-	// @endif
 
 	init : function() {
 		var el,
@@ -133,17 +96,10 @@ var pl = window.thePrintliminator = {
 				flags : {}
 			};
 
-			// @if MODE='BOOKMARKLET'
-			pl.addStyles();
-			// @endif
 		}
 
 
-		// @if MODE='BOOKMARKLET'
-		pl.addControls();
-		// @endif
 
-		// @if MODE='EXT'
 		// add messages
 		if ( !document.querySelector( 'ul.' + pl.css.messages ) ) {
 			el = document.createElement( 'ul' );
@@ -157,7 +113,6 @@ var pl = window.thePrintliminator = {
 			return;
 		}
 		pl.addClass( body, pl.css.enabled );
-		// @endif
 
 		// highlighting elements & keyboard binding
 		pl.addEvent( body, 'click', pl.bodyClick );
@@ -166,11 +121,6 @@ var pl = window.thePrintliminator = {
 		pl.addEvent( document, 'keyup', pl.bodyKeyUp );
 		pl.addEvent( document, 'keydown', pl.bodyKeyDown );
 
-		// @if MODE='BOOKMARKLET'
-		// drag
-		pl.addEvent( document, 'mouseup', pl.docMouseUp );
-		pl.addEvent( document, 'mousemove', pl.docMouseMove );
-		// @endif
 	},
 
 	// delegated event click
@@ -190,14 +140,10 @@ var pl = window.thePrintliminator = {
 				if ( !pl.hasClass( hilite, pl.css.fullWidth ) ) {
 					pl.addClass( hilite, pl.css.fullWidth );
 					thePrintliminatorVars.history.push( function() {
-						// @if MODE='EXT'
 						pl.showMessage( msg.fullWidthRestore, hilite );
-						// @endif
 						pl.removeClass( hilite, pl.css.fullWidth );
 					});
-					// @if MODE='EXT'
 					pl.showMessage( msg.fullWidthApply, hilite );
-					// @endif
 				}
 			} else {
 				// show opposite
@@ -207,22 +153,16 @@ var pl = window.thePrintliminator = {
 					sel = done.length;
 					if ( sel ) {
 						opposite = true;
-						// @if MODE='EXT'
 						pl.showMessage( msg.oppositeApply, hilite );
-						// @endif
 					} else {
 						// nothing left to remove
-						// @if MODE='EXT'
 						pl.showMessage( msg.oppositeNothing );
-						// @endif
 						return;
 					}
 				} else {
 					// hide clicked element
 					done = [ hilite ];
-					// @if MODE='EXT'
 					pl.showMessage( msg.hideUsingClick, hilite );
-					// @endif
 				}
 
 				pl.hide( done );
@@ -243,12 +183,7 @@ var pl = window.thePrintliminator = {
 	},
 
 	bodyMouseover : function( event ) {
-		// @if MODE='BOOKMARKLET'
-		if ( !pl.hasClass( event.target, pl.css.controls ) ) {
-		// @endif
-		// @if MODE='EXT'
 		if ( !pl.hasClass( event.target, pl.css.messages ) ) {
-		// @endif
 			pl.addClass( event.target, pl.css.hilite );
 		}
 		// make sure main window has focus
@@ -264,12 +199,10 @@ var pl = window.thePrintliminator = {
 				pl.print();
 				break;
 
-			// @if MODE='EXT'
 			// F1 toggle messages
 			case pl.keys.messages:
 				pl.messageOptions.show = !pl.messageOptions.show;
 				break;
-			// @endif
 		}
 	},
 
@@ -291,9 +224,7 @@ var pl = window.thePrintliminator = {
 					els = el.parentNode;
 					if ( !isBody && els ) {
 						pl.removeClass( el, highlight );
-						// @if MODE='EXT'
 						pl.showMessage( msg.findParent, els );
-						// @endif
 						pl.addClass( els, highlight );
 					}
 					break;
@@ -304,9 +235,7 @@ var pl = window.thePrintliminator = {
 					if ( elm ) {
 						pl.removeClass( el, highlight );
 						// first visible child element
-						// @if MODE='EXT'
 						pl.showMessage( msg.findChild, elm );
-						// @endif
 						pl.addClass( elm, highlight );
 					}
 					break;
@@ -315,9 +244,7 @@ var pl = window.thePrintliminator = {
 					elm = pl.getNext( el );
 					if ( !isBody && elm ) {
 						pl.removeClass( el, highlight );
-						// @if MODE='EXT'
 						pl.showMessage( msg.findNext, elm );
-						// @endif
 						pl.addClass( elm, highlight );
 					}
 					break;
@@ -326,18 +253,14 @@ var pl = window.thePrintliminator = {
 					elm = pl.getPrev( el );
 					if ( !isBody && elm ) {
 						pl.removeClass( el, highlight );
-						// @if MODE='EXT'
 						pl.showMessage( msg.findPrev, elm );
-						// @endif
 						pl.addClass( elm, highlight );
 					}
 					break;
 
 				case pl.keys.hide : // enter
 					if ( !isBody ) {
-						// @if MODE='EXT'
 						pl.showMessage( msg.hideUsingKeyboard, el );
-						// @endif
 						pl.addClass( el, hidden );
 						pl.addClass( el.parentNode, highlight );
 						thePrintliminatorVars.history.push( el );
@@ -353,23 +276,17 @@ var pl = window.thePrintliminator = {
 		switch ( event.which ) {
 			case pl.keys.fontUp : // Numpad + = Increase font size
 				body.style.fontSize = ( parseFloat( n ) + 1 ) + suffix;
-				// @if MODE='EXT'
 				pl.showMessage( msg.fontUp + body.style.fontSize );
-				// @endif
 				break;
 
 			case pl.keys.fontDown : // Numpad - = Decrease font size
 				body.style.fontSize = ( parseFloat( n ) - 1 ) + suffix;
-				// @if MODE='EXT'
 				pl.showMessage( msg.fontDown + body.style.fontSize );
-				// @endif
 				break;
 
 			case pl.keys.fontReset : // Numpad * = reset font-size
 				body.style.fontSize = '';
-				// @if MODE='EXT'
 				pl.showMessage( msg.fontReset );
-				// @endif
 				break;
 
 			case pl.keys.undo : // backspace
@@ -390,10 +307,6 @@ var pl = window.thePrintliminator = {
 			elm.nodeType === 1 &&
 			// not an ignored element
 			!pl.ignoredElm.test( elm.nodeName ) &&
-			// @if MODE='BOOKMARKLET'
-			// not controls
-			!pl.hasClass( elm, pl.css.controls ) &&
-			// @endif
 			// not hidden
 			!( pl.hasClass( elm, pl.css.hidden ) || elm.style.display === 'none' );
 	},
@@ -401,10 +314,8 @@ var pl = window.thePrintliminator = {
 	getOpposite : function( el ) {
 		var sibs,
 			done = [];
-		// @if MODE='EXT'
 		// hide messaging to prevent code from targeting it
 		pl.hideMsgContainer();
-		// @endif
 
 		// method: start from highlighted element
 		// get siblings & hide them; then go to parent, get siblings & hide them...
@@ -489,14 +400,10 @@ var pl = window.thePrintliminator = {
 			pl.removeHighlight();
 			pl.hide( done );
 			thePrintliminatorVars.flags.removeGraphics = true;
-			// @if MODE='EXT'
 			pl.showMessage( pl.messages.noGraphicsApply );
-			// @endif
 
 			thePrintliminatorVars.history.push( function() {
-				// @if MODE='EXT'
 				pl.showMessage( pl.messages.noGraphicsRestore );
-				// @endif
 				thePrintliminatorVars.flags.removeGraphics = false;
 				pl.show( done );
 				len = bkgds.length;
@@ -510,9 +417,7 @@ var pl = window.thePrintliminator = {
 	// Add print style
 	stylize : function() {
 		if ( !thePrintliminatorVars.flags.stylize ) {
-			// @if MODE='EXT'
 			pl.hideMsgContainer();
-			// @endif
 			var indx,
 				inline = [],
 				body = document.body,
@@ -541,14 +446,10 @@ var pl = window.thePrintliminator = {
 			pl.addClass( body, pl.css.stylized );
 			pl.removeHighlight();
 			thePrintliminatorVars.flags.stylize = true;
-			// @if MODE='EXT'
 			pl.showMessage( pl.messages.stylizeAdd );
-			// @endif
 
 			thePrintliminatorVars.history.push( function() {
-				// @if MODE='EXT'
 				pl.showMessage( pl.messages.stylizeRemove );
-				// @endif
 				thePrintliminatorVars.flags.stylize = false;
 				pl.removeClass( body, pl.css.stylized );
 				var indx,
@@ -565,26 +466,11 @@ var pl = window.thePrintliminator = {
 	},
 
 	print : function() {
-		// @if MODE='BOOKMARKLET'
-		var frame = document.body.querySelector( 'iframe.' + pl.css.controls ).contentWindow.document;
-		pl.addClass( frame.querySelector( 'li.' + pl.css.print ), pl.css.busy );
-		// @endif
 
 		pl.removeHighlight();
-		// @if MODE='EXT'
 		pl.hideMsgContainer();
 		window.print();
-		// @endif
 
-		// @if MODE='BOOKMARKLET'
-		// use setTimeout to allow class to render
-		setTimeout( function() {
-			window.print();
-			pl.busy( function() {
-				pl.removeClass( frame.querySelector( 'li.' + pl.css.print ), pl.css.busy );
-			});
-		}, 10);
-		// @endif
 	},
 	busy : function( callback ) {
 		if ( document.readyState !== 'complete' ) {
@@ -613,9 +499,7 @@ var pl = window.thePrintliminator = {
 		if ( last ) {
 			pl.removeHighlight();
 			if ( typeof last !== 'function' ) {
-				// @if MODE='EXT'
 				pl.showMessage( pl.messages.undo, last );
-				// @endif
 				pl.show( last );
 			} else {
 				last.call();
@@ -633,131 +517,10 @@ var pl = window.thePrintliminator = {
 		pl.removeEvent( document, 'keyup', pl.bodyKeyUp );
 		pl.removeEvent( document, 'keydown', pl.bodyKeyDown );
 
-		// @if MODE='BOOKMARKLET'
-		// drag
-		pl.removeEvent( document, 'mouseup', pl.docMouseUp );
-		pl.removeEvent( document, 'mousemove', pl.docMouseMove );
-		body.removeChild( document.querySelector( '.' + pl.css.wrap ) );
-		// @endif
 
-		// @if MODE='EXT'
 		body.removeChild( document.querySelector( 'ul.' + pl.css.messages ) );
-		// @endif
 	},
 
-	// @if MODE='BOOKMARKLET'
-	addStyles : function() {
-		var el,
-		body = document.body,
-		// programmically added stylesheets
-		styles = '{styles}';
-
-		// add print stylesheet
-		el = document.createElement( 'style' );
-		el.id = pl.css.stylesheet;
-		el.innerHTML = styles;
-		document.querySelector( 'head' ).appendChild( el );
-	},
-
-	// create popup (bookmarklet)
-	addControls : function() {
-		var frame,
-			body = document.body,
-			el = document.createElement( 'div' ),
-			controls = pl.css.controls;
-
-		body.appendChild( el );
-		pl.addClass( el, pl.css.wrap );
-		pl.addClass( el, controls );
-
-		el.innerHTML = '<iframe class="' + controls + '"></iframe>' +
-			'<div class="' + controls + ' ' + pl.css.drag + '"></div>';
-
-		frame = el.querySelector( 'iframe.' + controls ).contentWindow.document;
-		// Firefox needs script to open, write, then close... innerHTML doesn't work.
-		frame.open();
-		frame.write('{popupHTML}<style>{popupCSS}</style>');
-
-		frame.close();
-
-		pl.addEvent( frame.querySelector( '.' + pl.css.noGraphics ), 'click', pl.removeGraphics );
-		pl.addEvent( frame.querySelector( '.' + pl.css.print ), 'click', pl.print );
-		pl.addEvent( frame.querySelector( '.' + pl.css.undo ), 'click', pl.undo );
-		pl.addEvent( frame.querySelector( '.' + pl.css.stylize ), 'click', pl.stylize );
-		pl.addEvent( frame.querySelector( '.' + pl.css.close ), 'click', pl.abort );
-		pl.addEvent( frame.querySelector( '.' + pl.css.keyboard ), 'click', pl.keyboard );
-		// can't drag from within the iframe - the mouse coordinates would be within it
-		pl.addEvent( document.querySelector( '.' + pl.css.drag ), 'mousedown', pl.dragInit );
-		// include mouseup inside frame to stop the drag
-		pl.addEvent( frame, 'mouseup', pl.docMouseUp );
-	},
-
-	keyboard : function() {
-		var wrap = document.querySelector( '.' + pl.css.wrap ),
-			iframe = wrap.querySelector( 'iframe.' + pl.css.controls ),
-			ibody = iframe.contentWindow.document.body,
-			kb = ibody.querySelector( '#' + pl.css.keyboard ),
-			button = ibody.querySelector( '.' + pl.css.keyboard ),
-			disply = kb.style.display,
-			makeVisible = disply === 'none';
-		button.innerHTML = makeVisible ? 'Hide Keyboard Commands' : 'View Keyboard Commands';
-		kb.style.display = makeVisible ? '' : 'none';
-		wrap.style.height = ( makeVisible ? pl.keyboardOpen : pl.keyboardClosed ) + 5 + 'px';
-		// iframe needs to be a tiny bit taller than the body inside
-		iframe.style.height = ( makeVisible ? pl.keyboardOpen : pl.keyboardClosed ) + 5 + 'px';
-		ibody.style.height = ( makeVisible ? pl.keyboardOpen : pl.keyboardClosed ) + 20 + 'px';
-	},
-
-	// drag code adapted from http://jsfiddle.net/tovic/Xcb8d/light/
-	dragInit : function() {
-		var drag = pl.drag;
-		pl.addClass( document.querySelector( '.' + pl.css.drag ), pl.css.dragActive );
-		drag.el = document.querySelector( '.' + pl.css.wrap );
-		drag.elm[0] = drag.pos[0] - drag.el.offsetLeft;
-		drag.elm[1] = drag.pos[1] - drag.el.offsetTop;
-		// prevent selecting content while dragging
-		pl.toggleSelection( true );
-	},
-
-	docMouseMove : function( event ) {
-		var drag = pl.drag;
-		drag.pos[0] = document.all ? window.event.clientX : event.pageX;
-		drag.pos[1] = document.all ? window.event.clientY : event.pageY;
-		if ( pl.drag.el !== null ) {
-			drag.el.style.left = ( drag.pos[0] - drag.elm[0] ) + 'px';
-			drag.el.style.top  = ( drag.pos[1] - drag.elm[1] ) + 'px';
-		}
-	},
-
-	docMouseUp : function() {
-		pl.drag.el = null;
-		pl.removeClass( document.querySelector( '.' + pl.css.drag ), pl.css.dragActive );
-		pl.toggleSelection();
-	},
-
-	stopSelection : function() {
-		return false;
-	},
-
-	toggleSelection : function( disable ) {
-		var body = document.body;
-		if ( disable ) {
-			// save current "unselectable" value
-			pl.savedUnsel = body.getAttribute( 'unselectable' );
-			body.setAttribute( 'unselectable', 'on' );
-			pl.addClass( body, pl.css.noSelection );
-			pl.addEvent( body, 'onselectstart', pl.stopSelection );
-		} else {
-			if ( pl.savedUnsel ) {
-				body.setAttribute( 'unselectable', pl.savedUnsel );
-			}
-			pl.removeClass( body, pl.css.noSelection );
-			pl.removeEvent( body, 'onselectstart', pl.stopSelection );
-		}
-		// clear any selections
-		pl.clearSelection();
-	},
-	// @endif
 
 	clearSelection : function() {
 		// remove text selection - http://stackoverflow.com/a/3171348/145346
@@ -771,7 +534,6 @@ var pl = window.thePrintliminator = {
 		}
 	},
 
-	// @if MODE='EXT'
 	hideMsgContainer : function() {
 		pl.addClass( document.querySelector( 'ul.' + pl.css.messages ), pl.css.hidden );
 	},
@@ -825,7 +587,6 @@ var pl = window.thePrintliminator = {
 			})();
 		}
 	},
-	// @endif
 
 	hide : function ( els ) {
 		if ( els ) {

@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>The Printliminator</title>
+	<title>The Printliminator Demo</title>
 	<link rel="stylesheet" href="demo/css/style.css">
+	<link rel="icon" type="image/x-icon" href="src/icons/favicon.ico">
+	<link rel="icon" type="image/png" href="src/icons/icon-16.png">
 </head>
 
 <body>
@@ -14,7 +16,7 @@ This file is dynamically generated
 ██  ██ ██  ██   ██  ██ ██  ██   ██     ██ ██ ██ ██  ██ ██  ██ ██ ██     ██  ██
 ██  ██ ██  ██   ██  ██ ██  ██   ██     ██ ██ ██ ██  ██ ██  ██ ██ ██▀▀   ▀▀▀▀██
 █████▀ ▀████▀   ██  ██ ▀████▀   ██     ██ ██ ██ ▀████▀ █████▀ ██ ██     █████▀
-To make changes, modify the "src/index.html"
+To make changes, modify the "src/bookmarklet/index.html"
 -->
 
 	<div id="demo-top-bar">
@@ -36,7 +38,7 @@ To make changes, modify the "src/index.html"
 		Here is the bookmarklet:</p>
 
 		<p>
-			<a href="javascript:/*PRINTLIMINATOR*/!function(){function%20a(a,b){var%20c=document.createElement('script'),d=document.getElementsByTagName('head')[0],e=!1;c.type='text/javascript',c.src=a,c.onload=c.onreadystatechange=function(){e||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(e=!0,b())},d.appendChild(c)}a('//css-tricks.github.io/The-Printliminator/printliminator.min.js',function(){csstricksPrintliminator()})}();" id="bookmarklet" class="bookmarklet">Printliminator</a>
+			<a href="javascript:/*THE.PRINTLIMINATOR*/(function(){function%20loadScript(a,b){var%20c=document.createElement('script'),d=document.getElementsByTagName('head')[0],e=!1;c.type='text/javascript',c.src=a,c.onload=c.onreadystatechange=function(){e||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(e=!0,b())},d.appendChild(c)}loadScript('//css-tricks.github.io/The-Printliminator/printliminator.min.js',function(){thePrintliminator.init()});})();" id="bookmarklet" class="bookmarklet">The Printliminator</a>
 			<span class="drag-arrow"><strong>&larr;</strong> drag to your bookmarks bar</span>
 		</p>
 
@@ -50,7 +52,7 @@ To make changes, modify the "src/index.html"
 
 		<p>
 			By <a href="http://chriscoyier.net">Chris Coyier</a> and <a href="http://devongovett.wordpress.com/">Devon Govett</a>.
-			Some contributions by <a href="http://wowmotty.blogspot.com/">Rob Garrison</a>.
+			Updates & extensions by <a href="http://wowmotty.blogspot.com/">Rob Garrison</a>.
 			Icons by <a href="http://wefunction.com/2008/07/function-free-icon-set/">Function</a>.
 			Print stylesheet based on <a href="http://code.google.com/p/hartija/">Hartija</a>.
 		</p>
@@ -60,9 +62,12 @@ To make changes, modify the "src/index.html"
 		<script>
 		// file loaded locally, switch to local version for development
 		( function() {
-			if ( window.location.origin === 'file://' ) {
+			var link,
+				loc = window.location.origin;
+			// origin is 'null' in Firefox when viewing the page locally
+			if ( loc === 'file://' || loc === 'null' ) {
 				var link = document.getElementById( 'bookmarklet' );
-				link.href = "javascript:/*PRINTLIMINATOR*/!function(){function%20a(a,b){var%20c=document.createElement('script'),d=document.getElementsByTagName('head')[0],e=!1;c.type='text/javascript',c.src=a,c.onload=c.onreadystatechange=function(){e||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(e=!0,b())},d.appendChild(c)}a('src/printliminator.js',function(){csstricksPrintliminator()})}();";
+				link.href = "javascript:/*THE.PRINTLIMINATOR*/(function(){function%20loadScript(a,b){var%20c=document.createElement('script'),d=document.getElementsByTagName('head')[0],e=!1;c.type='text/javascript',c.src=a,c.onload=c.onreadystatechange=function(){e||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(e=!0,b())},d.appendChild(c)}loadScript('dist/bookmarklet/printliminator.js',function(){thePrintliminator.init()});})();";
 				document.getElementById('dev-mode').textContent = '(Dev Mode)';
 			}
 		})();

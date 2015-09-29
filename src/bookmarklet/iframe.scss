@@ -1,0 +1,172 @@
+$keyboardClosed : /* @echo keyboardClosed */px;
+$icon           : /* @echo icon */;
+$drag           : /* @echo drag */;
+$print          : /* @echo print */;
+$close          : /* @echo close */;
+$undo           : /* @echo undo */;
+$noGraphics     : /* @echo noGraphics */;
+$stylize        : /* @echo stylize */;
+$busy           : /* @echo busy */;
+$leftClick      : /* @echo leftClick */;
+$toggle         : /* @echo toggle */;
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+html {
+	box-sizing: border-box;
+	height: 100%;
+}
+html, body {
+	background: #eee;
+	min-height: $keyboardClosed;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.top {
+	background: #fff;
+	padding: 15px;
+
+	h3 {
+		color: #ccc;
+		margin: 0;
+	}
+	h3 span {
+		color: red;
+	}
+}
+
+.header, li {
+	background: #111;
+	color: #fff;
+	font-size: 11px;
+}
+.header, .header > div {
+	height: 21px;
+	font-size: 11px;
+}
+.header > div, li {
+	display: inline-block;
+}
+.right {
+	float: right;
+	margin-right: 6px;
+}
+
+.footer {
+	padding: 15px 15px 0 15px;
+
+	ul {
+		margin: 0 0 15px 0;
+		padding: 0;
+		list-style-type: none;
+	}
+}
+.keyboard-area {
+	margin: 0 -15px 0 -15px;
+	/* extend keyboard background outside of popup - accomidate for different row heights in browsers */
+	padding: 15px 15px 50px 15px;
+	background: #ccc;
+}
+.#{$toggle} {
+	font-size: 12px;
+	margin: 0 0 15px 0;
+	cursor: pointer;
+}
+.pl_logo {
+	width: 225px;
+	height: 15px;
+	margin: 0 0 5px 0;
+}
+h1, h3 {
+	margin: 0 0  10px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+h3 {
+	font-size: 10px;
+	font-weight: bold;
+}
+.#{$close}, .#{$drag} {
+	text-transform: uppercase;
+}
+
+.#{$icon} {
+	display: inline-block;
+	background: url(data:image/png;base64,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) no-repeat;
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+}
+
+.#{$drag} .#{$icon} { background-position: 0 0; }
+.#{$print} .#{$icon} { background-position: -25px 0; }
+.#{$close} .#{$icon} { background-position: -75px 0; width: 40px; cursor: pointer; }
+.#{$undo} .#{$icon} { background-position: 0 -25px; }
+.#{$noGraphics} .#{$icon} { background-position: -25px -25px; }
+.#{$stylize} .#{$icon} { background-position: -75px -25px; width: 35px; }
+.#{$leftClick} { background-position: -50px -25px; }
+li.#{$busy} .#{$icon} {
+	background-position: -50px 0;
+	-webkit-animation:spin 1.5s linear infinite;
+	-moz-animation:spin 1.5s linear infinite;
+	animation:spin 1.5s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+li {
+	padding: 4px 14px 4px 4px;
+	line-height: 12px;
+	font-size: 10px;
+	text-transform: uppercase;
+	text-align: left;
+	white-space: nowrap;
+	margin: 2px;
+	cursor: pointer;
+	display: inline-block;
+
+	&:hover {
+		background-color: #333;
+	}
+	span {
+		float: left;
+		margin: 0 10px 0 0;
+		text-align: left;
+	}
+}
+
+.key {
+	width: 30%;
+}
+table {
+	margin: 0 4px;
+	border-spacing: 0;
+}
+th {
+	text-align: left;
+	padding: 0;
+}
+kbd {
+	background: #fff;
+	border: #000 1px solid;
+	border-radius: 3px;
+	padding: 1px 3px;
+}
+td {
+	border-top: 1px solid #aaa;
+	font-size: 12px;
+	padding: 5px;
+	/* make Firefox match Webkit */
+	line-height: 18px;
+}
