@@ -5,6 +5,7 @@
   "author": "Chris Coyier",
   "description": "__MSG_printliminatorDescription__",
   "homepage_url": "https://github.com/CSS-Tricks/The-Printliminator",
+  "update_url": "https://css-tricks.github.io/The-Printliminator/updates.xml",
   "default_locale": "en",
   "icons": {
     "16": "icon16.png",
