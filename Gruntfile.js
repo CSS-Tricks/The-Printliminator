@@ -84,8 +84,7 @@ module.exports = function( grunt ) {
 				src : [
 					'dist/**/*',
 					config.indexHtml,
-					'*.min.js',
-					'updates.xml'
+					'*.min.js'
 				]
 			},
 			cleanup : {
@@ -119,14 +118,6 @@ module.exports = function( grunt ) {
 				expand : true,
 				src : [ '_locales/**/*.json' ],
 				dest : 'dist/chrome'
-			},
-			chromeUpdate : {
-				files : [{
-					expand : true,
-					flatten : true,
-					src : [ 'src/chrome/updates.xml' ],
-					dest : './'
-				}]
 			},
 			// Opera can use chrome.crx; just renamed
 			opera : {
@@ -299,7 +290,6 @@ module.exports = function( grunt ) {
 			'bookmarklet-create',
 			'copy:chrome',
 			'copy:chromeLocales',
-			'copy:chromeUpdate',
 			'jshint',
 			'jasmine',
 			'clean:cleanup'
@@ -361,8 +351,7 @@ module.exports = function( grunt ) {
 			projectFile = [
 				'dist/chrome/manifest.json',
 				'dist/chrome/printliminator.js',
-				'dist/bookmarklet/printliminator.js',
-				'updates.xml'
+				'dist/bookmarklet/printliminator.js'
 			],
 			len = projectFile.length;
 		for ( i = 0; i < len; i++ ) {
