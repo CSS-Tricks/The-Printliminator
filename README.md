@@ -23,8 +23,20 @@ Get the:
 * Updates & extensions by [Rob Garrison](http://wowmotty.blogspot.com/).
 * Icons by [Function](http://wefunction.com/2008/07/function-free-icon-set/).
 * Print stylesheet based on [Hartija](http://code.google.com/p/hartija/).
+* Translations provided by [Transifex]()
+
+### Contributing
+
+* Pull requests are welcome!
+* Provide additional translations via [Transifex](https://www.transifex.com/css-tricks/the-printliminator/) or with a pull request.
 
 ### Recent Changes
+
+#### Version 4.0.4 (9/30/2015)
+
+* Add screenshots of Opera extesion.
+* Rename Chrome screenshots.
+* Version bump to resubmit Opera extension.
 
 #### Version 4.0.3 (9/28/2015)
 
@@ -44,8 +56,3 @@ Get the:
   * Add some basic unit testing for DOM traversing.
   * All production files are now located in the `dist` folder; `printliminator.min.js` is still located in the root.
   * Added [wiki documentation](https://github.com/CSS-Tricks/The-Printliminator/wiki).
-
-#### Version 3.1.2 (9/15/2015)
-
-* Add missing <kbd>Shift</kbd>+Click functionality.
-* Make drag area larger while dragging. Fixes [issue #4](https://github.com/CSS-Tricks/The-Printliminator/issues/4).

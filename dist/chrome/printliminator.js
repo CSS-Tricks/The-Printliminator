@@ -1,4 +1,4 @@
-/* Printliminator v4.0.3
+/* Printliminator v4.0.4
  * https://github.com/CSS-Tricks/The-Printliminator
  */
 /*jshint expr:false */
@@ -8,7 +8,7 @@
 
 var pl = window.thePrintliminator = {
 
-	version : '4.0.3',
+	version : '4.0.4',
 
 	// preprocess is used to echo in settings from options.json
 	css : {
