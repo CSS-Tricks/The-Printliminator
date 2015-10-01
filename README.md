@@ -7,6 +7,7 @@ better print styling.
 Get the:
 * [Bookmarklet](//css-tricks.github.io/The-Printliminator/)
 * [Chrome Extension](//chrome.google.com/webstore/detail/the-printliminator/nklechikgnfoonbfmcalddjcpmcmgapf?hl=en-US&gl=US)
+* [Opera Extension](//addons.opera.com/en/extensions/details/the-printliminator/?display=en)
 
 ### Limitations
 
@@ -16,6 +17,7 @@ Get the:
 ### To Do
 
 * Support more languages: waiting for willing users to help!
+* Create Firefox & Safari extensions.
 
 ### Credits
 
