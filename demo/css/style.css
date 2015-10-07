@@ -1,26 +1,21 @@
-/*
-CSS-Tricks Example
-by Chris Coyier
-http://css-tricks.com
-*/
-
 * {
     margin: 0;
     padding: 0;
 }
 body {
-    font: 20px/1.6 Georgia, serif;
+    font: 20px/1.6 georgia, serif;
     overflow-x: hidden;
 }
 #frame {
     margin: 3px 0 0 1px;
 }
 #page-wrap {
-    width: 570px;
+    max-width: 570px;
     margin: 25px auto;
+    padding: 0 15px;
 }
 h1 {
-    font: bold 50px Helvetica, sans-serif;
+    font: bold 50px sans-serif;
     letter-spacing: -2px;
     margin: 0 0 15px 0;
 }
@@ -43,7 +38,7 @@ p {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
-iframe, .drag-arrow {
+.drag-arrow {
     font-size: 14px;
     vertical-align: middle;
 }
@@ -108,4 +103,17 @@ h2 {
 #demo-bar-badge:before,
 #demo-bar-badge:after {
     display: none !important;
+}
+
+.video-wrapper {
+    height: 0;
+    padding-top: 56.25%;
+    position: relative;
+}
+.video-wrapper > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>The Printliminator Demo</title>
@@ -22,7 +23,7 @@ To make changes, modify the "src/bookmarklet/index.html"
 	<div id="demo-top-bar">
 		<div id="demo-bar-inside">
 			<h2 id="demo-bar-badge">
-				<a href="//github.com/CSS-Tricks/The-Printliminator">CSS-Tricks Example</a>
+				<a href="http://css-tricks.com">CSS-Tricks Example</a>
 			</h2>
 			<div id="demo-bar-buttons"></div>
 		</div>
@@ -32,10 +33,9 @@ To make changes, modify the "src/bookmarklet/index.html"
 
 		<h1>The Printliminator<span id="dev-mode"></span></h1>
 
-		<p>The Printliminator is a bookmarklet with some simple tools you can use
-		to makes websites print better. One click to activate, and then click to remove
-		elements from the page, remove graphics, and apply better print styling.
-		Here is the bookmarklet:</p>
+		<p>The Printliminator is a bookmarklet with some simple tools you can use to makes websites print better. One click to activate, and then click to remove elements from the page, remove graphics, and apply better print styling.</p>
+
+		<p>Here is the bookmarklet:</p>
 
 		<p>
 			<a href="javascript:/*THE.PRINTLIMINATOR*/(function(){function%20loadScript(a,b){var%20c=document.createElement('script'),d=document.getElementsByTagName('head')[0],e=!1;c.type='text/javascript',c.src=a,c.onload=c.onreadystatechange=function(){e||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(e=!0,b())},d.appendChild(c)}loadScript('//css-tricks.github.io/The-Printliminator/printliminator.min.js',function(){thePrintliminator.init()});})();" id="bookmarklet" class="bookmarklet">The Printliminator</a>
@@ -44,16 +44,15 @@ To make changes, modify the "src/bookmarklet/index.html"
 
 		<h2>Video Demo</h2>
 
-		<p>We used to have a quick video demo here, but Blip.tv deleted it. RUDE. Here's one we found on YouTube about it.</p>
-
-		<iframe width="500" height="320" src="//www.youtube.com/embed/TAoRvdZaFPk" frameborder="0" allowfullscreen></iframe>
+		<div class="video-wrapper">
+			<iframe width="853" height="480" src="https://www.youtube.com/embed/Dt8hpqEIL1c" frameborder="0" allowfullscreen></iframe>
+		</div>
 
 		<h2>Credits</h2>
 
 		<p>
 			By <a href="http://chriscoyier.net">Chris Coyier</a> and <a href="http://devongovett.wordpress.com/">Devon Govett</a>.
 			Updates & extensions by <a href="http://wowmotty.blogspot.com/">Rob Garrison</a>.
-			Icons by <a href="http://wefunction.com/2008/07/function-free-icon-set/">Function</a>.
 			Print stylesheet based on <a href="http://code.google.com/p/hartija/">Hartija</a>.
 		</p>
 
