@@ -1,0 +1,194 @@
+{
+	"printliminatorName" : {
+		"message" : "The Printliminator",
+		"description" : "Extension name"
+	},
+	"printliminatorDescription" : {
+		"message" : "Un outil simple pour améliorer l’impression des sites web.",
+		"description" : "Extension Description"
+	},
+	"commandButtons" : {
+		"message" : "Outils",
+		"description" : "Command buttons: undo, stylize, remove graphics & print"
+	},
+	"clickToRemove" : {
+		"message" : "Cliquez sur les élément de la page pour les faire disparaitre",
+		"description" : "Click highlight to remove item"
+	},
+	"altClickRemove" : {
+		"message" : "Alt-cliquez sur un élément pour ne garder que lui",
+		"description" : "Alt-click highlight to remove everything expect the item"
+	},
+	"undoLast" : {
+		"message" : "Annuler",
+		"description" : "Undo the last action"
+	},
+	"addStylize" : {
+		"message" : "Supprimer<br>les styles",
+		"description" : "Add print stylesheet"
+	},
+	"removeGraphics" : {
+		"message" : "Supprimer<br>les images",
+		"description" : "Removes all images, iframes and video from the page"
+	},
+	"sendToPrint" : {
+		"message" : "Lancer<br>l’impression",
+		"description" : "Print the page"
+	},
+	"viewKeyboardCommands" : {
+		"message" : "Voir les raccourcis clavier",
+		"description" : "Open a list of keyboard commands"
+	},
+	"keyColumn" : {
+		"message" : "Touche",
+		"description" : "Key name column"
+	},
+	"descriptionColumn" : {
+		"message" : "Description",
+		"description" : "Description of key action"
+	},
+	"orText" : {
+		"message" : "ou",
+		"description" : "or text"
+	},
+	"keyPageUp" : {
+		"message" : "PagePrec",
+		"description" : "Page up key"
+	},
+	"keyUpArrow" : {
+		"message" : "Flèche haut",
+		"description" : "Up arrow key text added to title"
+	},
+	"upDescription" : {
+		"message" : "Sélectionner l’élement parent",
+		"description" : "Find parent element of current highlight"
+	},
+	"keyPageDown" : {
+		"message" : "PageSuiv",
+		"description" : "Page down key"
+	},
+	"keyDownArrow" : {
+		"message" : "Flèche bas",
+		"description" : "Down arrow key text added to title"
+	},
+	"downDescription" : {
+		"message" : "Sélectionner l’élément enfant",
+		"description" : "Find first visible child element of highlight"
+	},
+	"keyRightArrow" : {
+		"message" : "Flèche droite",
+		"description" : "Right arrow text added to title"
+	},
+	"rightDescription" : {
+		"message" : "Sélectionner l’élément suivant",
+		"description" : "Find next visible sibling element of highlight"
+	},
+	"keyLeftArrow" : {
+		"message" : "Flèche Gauche",
+		"description" : "Left arrow text added to title"
+	},
+	"leftDescription" : {
+		"message" : "Sélectionner l’élément précédent",
+		"description" : ""
+	},
+	"keyEnter" : {
+		"message" : "Entrer",
+		"description" : "Press enter to remove highlight"
+	},
+	"removeHighlight" : {
+		"message" : "Supprimer l’élément sélectionner",
+		"description" : "Remove highlighted box"
+	},
+	"keyBackspace" : {
+		"message" : "Retour arrière",
+		"description" : "Press backspace to undo last action"
+	},
+	"undoAction" : {
+		"message" : "Annuler",
+		"description" : "Undo last action"
+	},
+	"keyNumpad" : {
+		"message" : "Pavé num.",
+		"description" : "Numpad key text description"
+	},
+	"keyNumpadPlus" : {
+		"message" : "Plus (pavé numérique)",
+		"description" : "Numpad+ key"
+	},
+	"fontUp" : {
+		"message" : "Augmenter la taille des caractères",
+		"description" : "Use keyNumpad+ to increase font size"
+	},
+	"keyNumpadMinus" : {
+		"message" : "Moins Plus (pavé numérique)",
+		"description" : "Numpad- key"
+	},
+	"fontDown" : {
+		"message" : "Réduire la taille des caractères",
+		"description" : "Use keyNumpad- to decrease font size"
+	},
+	"keyNumpadAsterisk" : {
+		"message" : "Étoile (pavé numérique",
+		"description" : ""
+	},
+	"fontReset" : {
+		"message" : "Réinitialiser la taille des caractères",
+		"description" : "Reset font size to original"
+	},
+	"mouseLeftClick" : {
+		"message" : "click gauche",
+		"description" : "left mouse click"
+	},
+	"keyAlt" : {
+		"message" : "Alt",
+		"description" : "Alt-key used with mouse-click"
+	},
+	"removeOpposite" : {
+		"message" : "Ne garder que l’élément sélectionne",
+		"description" : "Remove opposite of highlight"
+	},
+	"keyShift" : {
+		"message" : "Shift",
+		"description" : "Shift-key used with mouse-click"
+	},
+	"fullWidth" : {
+		"message" : "Appliquer une largeur de 100% et supprimer les marges (le contour de sélection devient bleu)",
+		"description" : "Make highlighted element full width & add blue outline"
+	},
+	"keyF1" : {
+		"message" : "F1",
+		"description" : "F1 key name"
+	},
+	"keyF1Title" : {
+		"message" : "Touche F1",
+		"description" : "F1 key used to toggle messages"
+	},
+	"toggleMessages" : {
+		"message" : "Afficher/masquer le message d'action",
+		"description" : "Action message display is toggled by the F1 key"
+	},
+	"keyPS" : {
+		"message" : "ImprEcrn",
+		"description" : "Print Screen key (abbreviation)"
+	},
+	"keyPSTitle" : {
+		"message" : "Imprime Écran",
+		"description" : "Print Screen key full name added to title"
+	},
+	"printPage" : {
+		"message" : "Imprimer la page",
+		"description" : "Print the current page"
+	},
+	"keyEsc" : {
+		"message" : "Esc",
+		"description" : "Escape key to close Printliminator"
+	},
+	"keyEscTitle" : {
+		"message" : "Échap",
+		"description" : "Escape key full name"
+	},
+	"abort" : {
+		"message" : "Désactiver Printliminator en conservant l’historique d'annulation",
+		"description" : "Disable Printliminator, but save undo history."
+	}
+}
