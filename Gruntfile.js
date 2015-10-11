@@ -82,6 +82,8 @@ module.exports = function( grunt ) {
 		clean : {
 			build : {
 				src : [
+					'dist/**/**/**/*', // locales
+					'dist/**/**/*',
 					'dist/**/*',
 					config.indexHtml,
 					'*.min.js'

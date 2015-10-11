@@ -39,6 +39,10 @@
 		"message" : "Voir les raccourcis clavier",
 		"description" : "Open a list of keyboard commands"
 	},
+	"hideKeyboardCommands" : {
+		"message" : "Masquer les raccourcis clavier",
+		"description" : "Close list of keyboard commands"
+	},
 	"keyColumn" : {
 		"message" : "Touche",
 		"description" : "Key name column"

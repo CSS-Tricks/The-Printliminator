@@ -39,6 +39,10 @@
 		"message" : "View Keyboard Commands",
 		"description" : "Open a list of keyboard commands"
 	},
+	"hideKeyboardCommands" : {
+		"message" : "Hide Keyboard Commands",
+		"description" : "Close list of keyboard commands"
+	},
 	"keyColumn" : {
 		"message" : "Key",
 		"description" : "Key name column"

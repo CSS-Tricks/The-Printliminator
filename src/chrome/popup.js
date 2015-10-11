@@ -53,8 +53,7 @@ var commands = {
 			table = document.querySelector( '#/* @echo keyboard */' ),
 			mode = table.style.display === 'none';
 		table.style.display = mode ? '' : 'none';
-		this.innerHTML = ( mode ? 'Hide' : 'View' ) + ' Keyboard Commands';
-
+		this.innerHTML = chrome.i18n.getMessage( mode ? 'hideKeyboardCommands' : 'viewKeyboardCommands' );
 	},
 	undo : function() {
 		chrome.tabs.executeScript( null, {
@@ -63,19 +62,19 @@ var commands = {
 	},
 	setLanguage : function(){
 		// update all text content
-		commands.getMsg( document.querySelectorAll( '[i18n-text]' ), true );
-		commands.getMsg( document.querySelectorAll( '[i18n-title]' ), false );
+		commands.getMsg( document.querySelectorAll( '[i18n-text]' ), 'text' );
+		commands.getMsg( document.querySelectorAll( '[i18n-title]' ), 'title' );
 	},
-	getMsg : function( elms, isText ) {
+	getMsg : function( elms, target ) {
 		var indx, msgKey, message,
 			len = elms.length;
 		for ( indx = 0; indx < len; indx++ ) {
-			msgKey = elms[ indx ].getAttribute( 'i18n-' + ( isText ? 'text' : 'title' ) );
+			msgKey = elms[ indx ].getAttribute( 'i18n-' + target );
 			message = chrome.i18n.getMessage( msgKey );
-			if ( isText ) {
-				elms[ indx ].innerHTML = message;
+			if ( target === 'text' ) {
+				elms[ indx ].innerHTML += message;
 			} else {
-				elms[ indx ].title = message;
+				elms[ indx ].title = message.replace( '<br>', ' ' );
 			}
 		}
 	}
