@@ -1,4 +1,4 @@
-/* Printliminator v4.0.4
+/* Printliminator v4.0.5
  * https://github.com/CSS-Tricks/The-Printliminator
  */
 /*jshint expr:false */
@@ -8,7 +8,7 @@
 
 var pl = window.thePrintliminator = {
 
-	version : '4.0.4',
+	version : '4.0.5',
 
 	// preprocess is used to echo in settings from options.json
 	css : {
@@ -26,10 +26,10 @@ var pl = window.thePrintliminator = {
 
 	// message options
 	messageOptions : {
-		show      : undefined,    // show messages (F1 to toggle)
-		limit     : undefined,   // messages on screen
-		fade      : undefined,    // message fadeout (ms)
-		duration  : undefined // message visible (ms)
+		show      : true,    // show messages (F1 to toggle)
+		limit     : 6,   // messages on screen
+		fade      : 300,    // message fadeout (ms)
+		duration  : 4000 // message visible (ms)
 	},
 
 	messages : {
@@ -62,9 +62,12 @@ var pl = window.thePrintliminator = {
 		prevSib   : 37,  // left arrow
 		hide      : 13,  // enter
 		undo      : 8,   // backspace
-		fontUp    : 107, // Numpad +
-		fontDown  : 109, // Numpad -
-		fontReset : 106, // Numpad *
+		fontUp1   : 107, // Numpad +
+		fontUp2   : 187, // = (unshifted +)
+		fontDown1 : 109, // Numpad -
+		fontDown2 : 189, // -
+		fontReset1: 106, // Numpad *
+		fontReset2: 56,  // 8 (unshifted *)
 		print     : 44,  // PrtScn (keyup only)
 		abort     : 27,  // Esc
 
@@ -274,17 +277,20 @@ var pl = window.thePrintliminator = {
 		suffix = n.match( /[a-z]+/i )[0];
 
 		switch ( event.which ) {
-			case pl.keys.fontUp : // Numpad + = Increase font size
+			case pl.keys.fontUp1 : // Numpad + = Increase font size
+			case pl.keys.fontUp2 : // = (unshifted +)
 				body.style.fontSize = ( parseFloat( n ) + 1 ) + suffix;
 				pl.showMessage( msg.fontUp + body.style.fontSize );
 				break;
 
-			case pl.keys.fontDown : // Numpad - = Decrease font size
+			case pl.keys.fontDown1 : // Numpad - = Decrease font size
+			case pl.keys.fontDown2 : // -
 				body.style.fontSize = ( parseFloat( n ) - 1 ) + suffix;
 				pl.showMessage( msg.fontDown + body.style.fontSize );
 				break;
 
-			case pl.keys.fontReset : // Numpad * = reset font-size
+			case pl.keys.fontReset1 : // Numpad * = reset font-size
+			case pl.keys.fontReset2 : // 8 (unshifted *)
 				body.style.fontSize = '';
 				pl.showMessage( msg.fontReset );
 				break;

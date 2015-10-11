@@ -4,47 +4,47 @@
 		"description" : "Extension name"
 	},
 	"printliminatorDescription" : {
-		"message" : "A simple tool to make websites print better.",
+		"message" : "Un outil simple pour améliorer l’impression des sites web.",
 		"description" : "Extension Description"
 	},
 	"commandButtons" : {
-		"message" : "Other Useful Superpowers",
+		"message" : "Outils",
 		"description" : "Command buttons: undo, stylize, remove graphics & print"
 	},
 	"clickToRemove" : {
-		"message" : "Just click stuff on page to remove",
+		"message" : "Cliquez sur les élément de la page pour les faire disparaitre",
 		"description" : "Click highlight to remove item"
 	},
 	"altClickRemove" : {
-		"message" : "Alt-click to remove opposite",
+		"message" : "Alt-cliquez sur un élément pour ne garder que lui",
 		"description" : "Alt-click highlight to remove everything expect the item"
 	},
 	"undoLast" : {
-		"message" : "Undo<br>Last",
+		"message" : "Annuler",
 		"description" : "Undo the last action"
 	},
 	"addStylize" : {
-		"message" : "Add Print<br>Styles",
+		"message" : "Supprimer<br>les styles",
 		"description" : "Add print stylesheet"
 	},
 	"removeGraphics" : {
-		"message" : "Remove<br>Graphics",
+		"message" : "Supprimer<br>les images",
 		"description" : "Removes all images, iframes and video from the page"
 	},
 	"sendToPrint" : {
-		"message" : "Send to<br>print",
+		"message" : "Lancer<br>l’impression",
 		"description" : "Print the page"
 	},
 	"viewKeyboardCommands" : {
-		"message" : "View Keyboard Commands",
+		"message" : "Voir les raccourcis clavier",
 		"description" : "Open a list of keyboard commands"
 	},
 	"hideKeyboardCommands" : {
-		"message" : "Hide Keyboard Commands",
+		"message" : "Masquer les raccourcis clavier",
 		"description" : "Close list of keyboard commands"
 	},
 	"keyColumn" : {
-		"message" : "Key",
+		"message" : "Touche",
 		"description" : "Key name column"
 	},
 	"descriptionColumn" : {
@@ -52,95 +52,95 @@
 		"description" : "Description of key action"
 	},
 	"orText" : {
-		"message" : "or",
+		"message" : "ou",
 		"description" : "or text"
 	},
 	"keyPageUp" : {
-		"message" : "PageUp",
+		"message" : "PagePrec",
 		"description" : "Page up key"
 	},
 	"keyUpArrow" : {
-		"message" : "Up Arrow",
+		"message" : "Flèche haut",
 		"description" : "Up arrow key text added to title"
 	},
 	"upDescription" : {
-		"message" : "Find wrapper of highlighted box",
+		"message" : "Sélectionner l’élement parent",
 		"description" : "Find parent element of current highlight"
 	},
 	"keyPageDown" : {
-		"message" : "PageDown",
+		"message" : "PageSuiv",
 		"description" : "Page down key"
 	},
 	"keyDownArrow" : {
-		"message" : "Down Arrow",
+		"message" : "Flèche bas",
 		"description" : "Down arrow key text added to title"
 	},
 	"downDescription" : {
-		"message" : "Find content of highlighted box",
+		"message" : "Sélectionner l’élément enfant",
 		"description" : "Find first visible child element of highlight"
 	},
 	"keyRightArrow" : {
-		"message" : "Right Arrow",
+		"message" : "Flèche droite",
 		"description" : "Right arrow text added to title"
 	},
 	"rightDescription" : {
-		"message" : "Find next box inside same wrapper",
+		"message" : "Sélectionner l’élément suivant",
 		"description" : "Find next visible sibling element of highlight"
 	},
 	"keyLeftArrow" : {
-		"message" : "Left Arrow",
+		"message" : "Flèche Gauche",
 		"description" : "Left arrow text added to title"
 	},
 	"leftDescription" : {
-		"message" : "Find previous box inside same wrapper",
+		"message" : "Sélectionner l’élément précédent",
 		"description" : ""
 	},
 	"keyEnter" : {
-		"message" : "Enter",
+		"message" : "Entrer",
 		"description" : "Press enter to remove highlight"
 	},
 	"removeHighlight" : {
-		"message" : "Remove the highlighted box",
+		"message" : "Supprimer l’élément sélectionner",
 		"description" : "Remove highlighted box"
 	},
 	"keyBackspace" : {
-		"message" : "Backspace",
+		"message" : "Retour arrière",
 		"description" : "Press backspace to undo last action"
 	},
 	"undoAction" : {
-		"message" : "Undo last action",
+		"message" : "Annuler",
 		"description" : "Undo last action"
 	},
 	"keyNumpad" : {
-		"message" : "Numpad",
+		"message" : "Pavé num.",
 		"description" : "Numpad key text description"
 	},
 	"keyNumpadPlus" : {
-		"message" : "Numpad Plus",
+		"message" : "Plus (pavé numérique)",
 		"description" : "Numpad+ key"
 	},
 	"fontUp" : {
-		"message" : "Increase font-size by 1",
+		"message" : "Augmenter la taille des caractères",
 		"description" : "Use keyNumpad+ to increase font size"
 	},
 	"keyNumpadMinus" : {
-		"message" : "Numpad Minus",
+		"message" : "Moins Plus (pavé numérique)",
 		"description" : "Numpad- key"
 	},
 	"fontDown" : {
-		"message" : "Decrease font-size by 1",
+		"message" : "Réduire la taille des caractères",
 		"description" : "Use keyNumpad- to decrease font size"
 	},
 	"keyNumpadAsterisk" : {
-		"message" : "Numpad Asterisk (Multiply)",
+		"message" : "Étoile (pavé numérique",
 		"description" : ""
 	},
 	"fontReset" : {
-		"message" : "Reset font-size",
+		"message" : "Réinitialiser la taille des caractères",
 		"description" : "Reset font size to original"
 	},
 	"mouseLeftClick" : {
-		"message" : "left-click on mouse",
+		"message" : "click gauche",
 		"description" : "left mouse click"
 	},
 	"keyAlt" : {
@@ -148,7 +148,7 @@
 		"description" : "Alt-key used with mouse-click"
 	},
 	"removeOpposite" : {
-		"message" : "Remove everything but highlighted box",
+		"message" : "Ne garder que l’élément sélectionne",
 		"description" : "Remove opposite of highlight"
 	},
 	"keyShift" : {
@@ -156,7 +156,7 @@
 		"description" : "Shift-key used with mouse-click"
 	},
 	"fullWidth" : {
-		"message" : "Set box width to 100% &amp; margins to zero (highlight turns blue)",
+		"message" : "Appliquer une largeur de 100% et supprimer les marges (le contour de sélection devient bleu)",
 		"description" : "Make highlighted element full width & add blue outline"
 	},
 	"keyF1" : {
@@ -164,23 +164,23 @@
 		"description" : "F1 key name"
 	},
 	"keyF1Title" : {
-		"message" : "Function One",
+		"message" : "Touche F1",
 		"description" : "F1 key used to toggle messages"
 	},
 	"toggleMessages" : {
-		"message" : "Toggle action messages",
+		"message" : "Afficher/masquer le message d'action",
 		"description" : "Action message display is toggled by the F1 key"
 	},
 	"keyPS" : {
-		"message" : "PrtScn",
+		"message" : "ImprEcrn",
 		"description" : "Print Screen key (abbreviation)"
 	},
 	"keyPSTitle" : {
-		"message" : "Print Screen",
+		"message" : "Imprime Écran",
 		"description" : "Print Screen key full name added to title"
 	},
 	"printPage" : {
-		"message" : "Print Page",
+		"message" : "Imprimer la page",
 		"description" : "Print the current page"
 	},
 	"keyEsc" : {
@@ -188,11 +188,11 @@
 		"description" : "Escape key to close Printliminator"
 	},
 	"keyEscTitle" : {
-		"message" : "Escape",
+		"message" : "Échap",
 		"description" : "Escape key full name"
 	},
 	"abort" : {
-		"message" : "Disable Printliminator, but save undo history",
+		"message" : "Désactiver Printliminator en conservant l’historique d'annulation",
 		"description" : "Disable Printliminator, but save undo history."
 	}
 }

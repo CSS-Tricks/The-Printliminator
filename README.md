@@ -25,7 +25,7 @@ Get the:
 * Updates & extensions by [Rob Garrison](http://wowmotty.blogspot.com/).
 * Icons by [Function](http://wefunction.com/2008/07/function-free-icon-set/).
 * Print stylesheet based on [Hartija](http://code.google.com/p/hartija/).
-* Translations provided by [Transifex]()
+* Translations provided by [Transifex](https://www.transifex.com).
 
 ### Contributing
 
@@ -33,6 +33,18 @@ Get the:
 * Provide additional translations via [Transifex](https://www.transifex.com/css-tricks/the-printliminator/) or with a pull request.
 
 ### Recent Changes
+
+#### Version 4.0.5 (10/9/2015)
+
+* Readme:
+  * Add link to Opera extension.
+  * Fix link to Transifex.
+* Demo: Add video & repo link.
+* Locales:
+  * Add French locale. See [pull #7](https://github.com/CSS-Tricks/The-Printliminator/pull/7); thanks [yukulele](https://github.com/yukulele)!
+  * Update missing locale string & fix button overflow issues
+* Include non-numpad keys for font-resizing. Fixes [issue #8](https://github.com/CSS-Tricks/The-Printliminator/issues/8).
+* Fix extension messaging options.
 
 #### Version 4.0.4 (9/30/2015)
 

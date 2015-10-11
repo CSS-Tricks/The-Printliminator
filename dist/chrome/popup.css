@@ -73,15 +73,15 @@ li {
   vertical-align: middle;
   padding: 4px 16px 4px 4px;
   white-space: nowrap;
-  margin: 2px;
   cursor: pointer;
+  max-width: 23%;
+  overflow: hidden;
 }
 li:hover {
   background: #444;
 }
 
 .icon {
-  display: inline-block;
   background: url(printliminator.png) no-repeat;
   width: 25px;
   height: 25px;
