@@ -34,7 +34,7 @@ Get the:
 
 ### Recent Changes
 
-#### Version 4.0.5 (10/9/2015)
+#### Version 4.0.5 (10/11/2015)
 
 * Readme:
   * Add link to Opera extension.
