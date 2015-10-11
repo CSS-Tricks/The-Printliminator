@@ -2,7 +2,7 @@ The Printliminator is a simple tool you can use to make websites print better.
 One click to activate, and then click to remove elements from the page, remove graphics, and apply
 better print styling.
 
-![screenshot](https://cloud.githubusercontent.com/assets/136959/9867743/caff5512-5b36-11e5-92e5-2b2e022be437.png)
+![screenshot](https://cloud.githubusercontent.com/assets/136959/10418826/4ccd60c6-702b-11e5-8ed8-f4d4df66e6d5.png)
 
 Get the:
 * [Bookmarklet](//css-tricks.github.io/The-Printliminator/)
