@@ -48,10 +48,10 @@ var pl = window.thePrintliminator = {
 	// @if MODE='EXT'
 	// message options
 	messageOptions : {
-		show      : /* @echo messageShow */,    // show messages (F1 to toggle)
-		limit     : /* @echo messageLimit */,   // messages on screen
-		fade      : /* @echo messageFade */,    // message fadeout (ms)
-		duration  : /* @echo messageDuration */ // message visible (ms)
+		show      : /* @echo settings.messageShow */,    // show messages (F1 to toggle)
+		limit     : /* @echo settings.messageLimit */,   // messages on screen
+		fade      : /* @echo settings.messageFade */,    // message fadeout (ms)
+		duration  : /* @echo settings.messageDuration */ // message visible (ms)
 	},
 
 	messages : {
