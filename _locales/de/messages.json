@@ -1,0 +1,198 @@
+{
+	"printliminatorName" : {
+		"message" : "The Printliminator",
+		"description" : "Extension name"
+	},
+	"printliminatorDescription" : {
+		"message" : "Ein einfaches Tool um Websiten besser zu drucken.",
+		"description" : "Extension Beschreibung"
+	},
+	"commandButtons" : {
+		"message" : "Andere nützliche Superpowers",
+		"description" : "Command buttons: undo, stylize, remove graphics & drucken"
+	},
+	"clickToRemove" : {
+		"message" : "Klicke einfach auf Sachen um sie verschwinden zu lassen",
+		"description" : "Klick um das Element verschwinden zu lassen"
+	},
+	"altClickRemove" : {
+		"message" : "Alt-click um das Gegenteil zu entfernen",
+		"description" : "Alt-click um alles ausser das Element verschwinden zu lassen"
+	},
+	"undoLast" : {
+		"message" : "Undo<br>Last",
+		"description" : "Letzte Änderung rückgängig machen"
+	},
+	"addStylize" : {
+		"message" : "Druck<br>Styles hinzufügen",
+		"description" : "Druck-stylesheet hinzufügen"
+	},
+	"removeGraphics" : {
+		"message" : "Grafiken<br>entfernen",
+		"description" : "Alle Bilder, iframes und videos von der Seite entfernen"
+	},
+	"sendToPrint" : {
+		"message" : "Drucken",
+		"description" : "Diese Seite drucken"
+	},
+	"viewKeyboardCommands" : {
+		"message" : "Tastaturbefehle anzeigen",
+		"description" : "Öffne die Liste mit den Tastaturbefehlen"
+	},
+	"hideKeyboardCommands" : {
+		"message" : "Tastaturbefehle verstecken",
+		"description" : "Schliesse die Liste mit den Tastaturbefehlen"
+	},
+	"keyColumn" : {
+		"message" : "Taste",
+		"description" : "Tastenname"
+	},
+	"descriptionColumn" : {
+		"message" : "Beschreibung",
+		"description" : "Beschreibung der Aktion durch die Taste"
+	},
+	"orText" : {
+		"message" : "oder",
+		"description" : "oder text"
+	},
+	"keyPageUp" : {
+		"message" : "PageUp",
+		"description" : "Page up Taste"
+	},
+	"keyUpArrow" : {
+		"message" : "Pfeil nach oben",
+		"description" : "Pfeil nach oben Taste Text zum Titel hinzugefügt"
+	},
+	"upDescription" : {
+		"message" : "Finde die Umhüllung der hervorgehobenen Box",
+		"description" : "Finde die Umhüllung der hervorgehobenen Box"
+	},
+	"keyPageDown" : {
+		"message" : "PageDown",
+		"description" : "Page down key"
+	},
+	"keyDownArrow" : {
+		"message" : "Pfeil nach unten",
+		"description" : "Pfeil nach unten Text zum Titel hinzugefügt"
+	},
+	"downDescription" : {
+		"message" : "Find content of highlighted box",
+		"description" : "Find first visible child element of highlight"
+	},
+	"keyRightArrow" : {
+		"message" : "Rechter Pfeil",
+		"description" : "Rechter Pfeil Text zum Titel hinzugefügt"
+	},
+	"rightDescription" : {
+		"message" : "Find next box inside same wrapper",
+		"description" : "Find next visible sibling element of highlight"
+	},
+	"keyLeftArrow" : {
+		"message" : "Linker Pfeil",
+		"description" : "Linker Pfeil Text zum Titel hinzugefügt"
+	},
+	"leftDescription" : {
+		"message" : "Finde das nächst kleinere Element in dieser Box",
+		"description" : ""
+	},
+	"keyEnter" : {
+		"message" : "Enter",
+		"description" : "Drücke Enter um die Hervorhebung zu entfernen"
+	},
+	"removeHighlight" : {
+		"message" : "Die hervorgehobene Box löschen",
+		"description" : "Lösche die hervorgehobene Box"
+	},
+	"keyBackspace" : {
+		"message" : "Backspace",
+		"description" : "Drücke backspace um die letze Handlung rückgängig zu machen"
+	},
+	"undoAction" : {
+		"message" : "Letzte Handlung ungeschehen machen",
+		"description" : "Letzte Handlung ungeschehen machen"
+	},
+	"keyNumpad" : {
+		"message" : "Numpad",
+		"description" : "Numpad Taste Text Beschreibung"
+	},
+	"keyNumpadPlus" : {
+		"message" : "Numpad Plus",
+		"description" : "Numpad+ Taste"
+	},
+	"fontUp" : {
+		"message" : "Schriftgrösse um 1 vergrössern",
+		"description" : "Nutze keyNumpad+ um die Schriftgrösse zu vergrössern"
+	},
+	"keyNumpadMinus" : {
+		"message" : "Numpad Minus",
+		"description" : "Numpad- Taste"
+	},
+	"fontDown" : {
+		"message" : "Schriftgrösse um 1 verkleinern",
+		"description" : "Nutze keyNumpad- um die Schriftgrösse zu verkleinern"
+	},
+	"keyNumpadAsterisk" : {
+		"message" : "Numpad Asterisk (Multiply)",
+		"description" : ""
+	},
+	"fontReset" : {
+		"message" : "Schriftgrösse zurücksetzen",
+		"description" : "Schriftgrösse zurück auf Standard setzen"
+	},
+	"mouseLeftClick" : {
+		"message" : "linker Mausklick",
+		"description" : "linker Mausklick"
+	},
+	"keyAlt" : {
+		"message" : "Alt",
+		"description" : "Alt-Taste mit Mausklick"
+	},
+	"removeOpposite" : {
+		"message" : "Entferne alles ausser die hervorgehobene Box",
+		"description" : "Entferne das Gegenteil vom Hervorgehobenen"
+	},
+	"keyShift" : {
+		"message" : "Shift",
+		"description" : "Shift-taste mit Mausklick"
+	},
+	"fullWidth" : {
+		"message" : "Set box width to 100% &amp; margins to zero (highlight turns blue)",
+		"description" : "Make highlighted element full width & add blue outline"
+	},
+	"keyF1" : {
+		"message" : "F1",
+		"description" : "F1 Taste"
+	},
+	"keyF1Title" : {
+		"message" : "Function One",
+		"description" : "F1 Taste genutzt um Nachrichten ein/auszuschalten"
+	},
+	"toggleMessages" : {
+		"message" : "Toggle action messages",
+		"description" : "Action message display is toggled by the F1 key"
+	},
+	"keyPS" : {
+		"message" : "PrtScn",
+		"description" : "Print Screen key (abbreviation)"
+	},
+	"keyPSTitle" : {
+		"message" : "Print Screen",
+		"description" : "Print Screen key full name added to title"
+	},
+	"printPage" : {
+		"message" : "Seite drucken",
+		"description" : "Diese Seite ausdrucken"
+	},
+	"keyEsc" : {
+		"message" : "Esc",
+		"description" : "Escapetaste um den Printliminator zu schliessen"
+	},
+	"keyEscTitle" : {
+		"message" : "Escape",
+		"description" : "Escapetaste full name"
+	},
+	"abort" : {
+		"message" : "Printliminator deaktivieren, aber Verlauf sichern",
+		"description" : "Printliminator deaktivieren, aber Verlauf sichern."
+	}
+}
