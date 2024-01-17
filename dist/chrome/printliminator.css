@@ -13,7 +13,12 @@
     /* Images */
     /* Table */
   }
-  body._printliminator_stylized h1, body._printliminator_stylized h2, body._printliminator_stylized h3, body._printliminator_stylized h4, body._printliminator_stylized h5, body._printliminator_stylized h6 {
+  body._printliminator_stylized h1,
+  body._printliminator_stylized h2,
+  body._printliminator_stylized h3,
+  body._printliminator_stylized h4,
+  body._printliminator_stylized h5,
+  body._printliminator_stylized h6 {
     font-family: Helvetica, Arial, sans-serif !important;
   }
   body._printliminator_stylized h1 {
@@ -25,7 +30,9 @@
   body._printliminator_stylized h3 {
     font-size: 15pt !important;
   }
-  body._printliminator_stylized h4, body._printliminator_stylized h5, body._printliminator_stylized h6 {
+  body._printliminator_stylized h4,
+  body._printliminator_stylized h5,
+  body._printliminator_stylized h6 {
     font-size: 12pt !important;
   }
   body._printliminator_stylized code {
@@ -78,7 +85,9 @@
   }
 
   ._printliminator_hidden {
-    display: none !important;
+    /* display: none !important; */
+    background-color: rgba(255, 0, 0, 0.3);
+    /* red with 30% transparency */
   }
 
   ._printliminator_full_width {
@@ -104,7 +113,8 @@
   ._printliminator_highlight._printliminator_full_width {
     outline-color: blue !important;
   }
-  ._printliminator_highlight, ._printliminator_highlight ._printliminator_messages {
+  ._printliminator_highlight,
+  ._printliminator_highlight ._printliminator_messages {
     cursor: default !important;
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
@@ -112,9 +122,9 @@
     user-select: none !important;
   }
 
-  /* ul & li have same class to make it easier to ignore
-   and reset all possible settings
-  */
+    /* ul & li have same class to make it easier to ignore
+	 and reset all possible settings
+	*/
   ._printliminator_messages {
     font: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif !important;
     font-size: 16px !important;

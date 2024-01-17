@@ -1,0 +1,198 @@
+{
+	"printliminatorName" : {
+		"message" : "The Printliminator",
+		"description" : "Extension name"
+	},
+	"printliminatorDescription" : {
+		"message" : "Једноставан алат за боље штампање веб страница.",
+		"description" : "Extension Description"
+	},
+	"commandButtons" : {
+		"message" : "Остале корисне могућности",
+		"description" : "Command buttons: undo, stylize, remove graphics & print"
+	},
+	"clickToRemove" : {
+		"message" : "Кликни на елемент на страници за уклањање",
+		"description" : "Click highlight to remove item"
+	},
+	"altClickRemove" : {
+		"message" : "Alt-клик за уклањање супротног",
+		"description" : "Alt-click highlight to remove everything expect the item"
+	},
+	"undoLast" : {
+		"message" : "Опозови<br>последње",
+		"description" : "Undo the last action"
+	},
+	"addStylize" : {
+		"message" : "Додај стилове<br>штампања",
+		"description" : "Add print stylesheet"
+	},
+	"removeGraphics" : {
+		"message" : "Уклони<br>графику",
+		"description" : "Removes all images, iframes and video from the page"
+	},
+	"sendToPrint" : {
+		"message" : "Одштампај<br>страницу",
+		"description" : "Print the page"
+	},
+	"viewKeyboardCommands" : {
+		"message" : "Види тастерске пречице",
+		"description" : "Open a list of keyboard commands"
+	},
+	"hideKeyboardCommands" : {
+		"message" : "Сакриј тастерске пречице",
+		"description" : "Close list of keyboard commands"
+	},
+	"keyColumn" : {
+		"message" : "Тастер",
+		"description" : "Key name column"
+	},
+	"descriptionColumn" : {
+		"message" : "Опис",
+		"description" : "Description of key action"
+	},
+	"orText" : {
+		"message" : "или",
+		"description" : "or text"
+	},
+	"keyPageUp" : {
+		"message" : "PageUp",
+		"description" : "Page up key"
+	},
+	"keyUpArrow" : {
+		"message" : "Стрелица горе",
+		"description" : "Up arrow key text added to title"
+	},
+	"upDescription" : {
+		"message" : "Нађи матични елемент који укључује истакнути оквир",
+		"description" : "Find parent element of current highlight"
+	},
+	"keyPageDown" : {
+		"message" : "PageDown",
+		"description" : "Page down key"
+	},
+	"keyDownArrow" : {
+		"message" : "Стрелица доле",
+		"description" : "Down arrow key text added to title"
+	},
+	"downDescription" : {
+		"message" : "Нађи садржај истакнутог оквира",
+		"description" : "Find first visible child element of highlight"
+	},
+	"keyRightArrow" : {
+		"message" : "Стрелица десно",
+		"description" : "Right arrow text added to title"
+	},
+	"rightDescription" : {
+		"message" : "Нађи следећи оквир унутар истог матичног елемента",
+		"description" : "Find next visible sibling element of highlight"
+	},
+	"keyLeftArrow" : {
+		"message" : "Стрелица лево",
+		"description" : "Left arrow text added to title"
+	},
+	"leftDescription" : {
+		"message" : "Нађи претходни оквир унутар истог матичног елемента",
+		"description" : ""
+	},
+	"keyEnter" : {
+		"message" : "Enter",
+		"description" : "Press enter to remove highlight"
+	},
+	"removeHighlight" : {
+		"message" : "Уклони садржај оквира",
+		"description" : "Remove highlighted box"
+	},
+	"keyBackspace" : {
+		"message" : "Backspace",
+		"description" : "Press backspace to undo last action"
+	},
+	"undoAction" : {
+		"message" : "Опозови последњу радњу",
+		"description" : "Undo last action"
+	},
+	"keyNumpad" : {
+		"message" : "Numpad",
+		"description" : "Numpad key text description"
+	},
+	"keyNumpadPlus" : {
+		"message" : "Плус на нумеричкој тастатури",
+		"description" : "Numpad+ key"
+	},
+	"fontUp" : {
+		"message" : "Повећај величину фонта за 1",
+		"description" : "Use keyNumpad+ to increase font size"
+	},
+	"keyNumpadMinus" : {
+		"message" : "Минус на нумеричкој тастатури",
+		"description" : "Numpad- key"
+	},
+	"fontDown" : {
+		"message" : "Смањи величину фонта за 1",
+		"description" : "Use keyNumpad- to decrease font size"
+	},
+	"keyNumpadAsterisk" : {
+		"message" : "Звездица на нумеричкој тастатури (множење)",
+		"description" : ""
+	},
+	"fontReset" : {
+		"message" : "Врати почетну величину фонта",
+		"description" : "Reset font size to original"
+	},
+	"mouseLeftClick" : {
+		"message" : "клик левим тастером миша",
+		"description" : "left mouse click"
+	},
+	"keyAlt" : {
+		"message" : "Alt",
+		"description" : "Alt-key used with mouse-click"
+	},
+	"removeOpposite" : {
+		"message" : "Уклони све изван истакнутог оквира",
+		"description" : "Remove opposite of highlight"
+	},
+	"keyShift" : {
+		"message" : "Shift",
+		"description" : "Shift-key used with mouse-click"
+	},
+	"fullWidth" : {
+		"message" : "Постави ширину оквира на 100% и ивице на нула (истакнуто постаје плаво)",
+		"description" : "Make highlighted element full width & add blue outline"
+	},
+	"keyF1" : {
+		"message" : "F1",
+		"description" : "F1 key name"
+	},
+	"keyF1Title" : {
+		"message" : "Function One",
+		"description" : "F1 key used to toggle messages"
+	},
+	"toggleMessages" : {
+		"message" : "Укључи/искључи информације о радњи",
+		"description" : "Action message display is toggled by the F1 key"
+	},
+	"keyPS" : {
+		"message" : "PrtScn",
+		"description" : "Print Screen key (abbreviation)"
+	},
+	"keyPSTitle" : {
+		"message" : "Print Screen",
+		"description" : "Print Screen key full name added to title"
+	},
+	"printPage" : {
+		"message" : "Одштампај страницу",
+		"description" : "Print the current page"
+	},
+	"keyEsc" : {
+		"message" : "Esc",
+		"description" : "Escape key to close Printliminator"
+	},
+	"keyEscTitle" : {
+		"message" : "Escape",
+		"description" : "Escape key full name"
+	},
+	"abort" : {
+		"message" : "Онемогући Printliminator али сачувај историју",
+		"description" : "Disable Printliminator, but save undo history."
+	}
+}
